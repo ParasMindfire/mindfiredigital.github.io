@@ -1,0 +1,3765 @@
+{
+  "generated_at": "2026-02-10T07:47:25.951Z",
+  "scoring_weights": {
+    "COMMIT_IN_DEFAULT": 2,
+    "PR_MERGED_TO_DEFAULT": 5,
+    "BUG_FIX_ISSUE": 3,
+    "ENHANCEMENT_ISSUE": 3,
+    "DOCUMENTATION_ISSUE": 1,
+    "OTHER_ISSUE": 2,
+    "PROJECT_PARTICIPATION": 10
+  },
+  "summary": {
+    "total_contributors": 76,
+    "total_commits": 4793,
+    "total_prs": 523,
+    "total_issues": 415,
+    "total_bugs": 47,
+    "total_enhancements": 128,
+    "total_documentation": 60,
+    "total_others": 180,
+    "avg_score": 190,
+    "avg_commits_per_contributor": 63,
+    "avg_prs_per_contributor": 7
+  },
+  "leaderboard": [
+    {
+      "username": "anandmindfire",
+      "id": 155735575,
+      "avatar_url": "https://avatars.githubusercontent.com/u/155735575?v=4",
+      "html_url": "https://github.com/anandmindfire",
+      "totalCommits": 990,
+      "totalPRs": 95,
+      "avgCommitsPerPR": 10.42,
+      "issues": {
+        "bugs": 5,
+        "enhancements": 33,
+        "documentation": 10,
+        "others": 3,
+        "total": 51
+      },
+      "projectsWorkingOn": 9,
+      "projects": [
+        "react-text-igniter",
+        "ESLint Plugin Hub",
+        "Page Builder",
+        "Pivothead",
+        "Document Editor",
+        "Ignix UI",
+        "Next.js Fortress",
+        "MonoDog",
+        "Mindfire Digital Website"
+      ],
+      "byProject": {
+        "react-text-igniter": {
+          "commits": 2,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 1,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "ESLint Plugin Hub": {
+          "commits": 160,
+          "prs": 6,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 15,
+            "documentation": 10,
+            "others": 0
+          }
+        },
+        "Page Builder": {
+          "commits": 380,
+          "prs": 24,
+          "issues": {
+            "bugs": 4,
+            "enhancements": 8,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Pivothead": {
+          "commits": 192,
+          "prs": 27,
+          "issues": {
+            "bugs": 1,
+            "enhancements": 4,
+            "documentation": 0,
+            "others": 1
+          }
+        },
+        "Document Editor": {
+          "commits": 76,
+          "prs": 5,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Ignix UI": {
+          "commits": 18,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 1,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Next.js Fortress": {
+          "commits": 48,
+          "prs": 3,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "MonoDog": {
+          "commits": 16,
+          "prs": 3,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 4,
+            "documentation": 0,
+            "others": 2
+          }
+        },
+        "Mindfire Digital Website": {
+          "commits": 98,
+          "prs": 26,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 2675,
+      "scoreBreakdown": {
+        "commits": 1980,
+        "prs": 475,
+        "bugs": 15,
+        "enhancements": 99,
+        "documentation": 10,
+        "others": 6,
+        "projects": 90
+      },
+      "lastActiveDays": null,
+      "rank": 1
+    },
+    {
+      "username": "deepakyadav-01",
+      "id": 155735643,
+      "avatar_url": "https://avatars.githubusercontent.com/u/155735643?v=4",
+      "html_url": "https://github.com/deepakyadav-01",
+      "totalCommits": 625,
+      "totalPRs": 179,
+      "avgCommitsPerPR": 3.49,
+      "issues": {
+        "bugs": 1,
+        "enhancements": 13,
+        "documentation": 17,
+        "others": 7,
+        "total": 38
+      },
+      "projectsWorkingOn": 4,
+      "projects": [
+        "react-text-igniter",
+        "Ignix UI",
+        "TextIgniter",
+        "Mindfire Digital Website"
+      ],
+      "byProject": {
+        "react-text-igniter": {
+          "commits": 114,
+          "prs": 24,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 5,
+            "documentation": 1,
+            "others": 1
+          }
+        },
+        "Ignix UI": {
+          "commits": 378,
+          "prs": 124,
+          "issues": {
+            "bugs": 1,
+            "enhancements": 8,
+            "documentation": 16,
+            "others": 2
+          }
+        },
+        "TextIgniter": {
+          "commits": 120,
+          "prs": 31,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 4
+          }
+        },
+        "Mindfire Digital Website": {
+          "commits": 13,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 2258,
+      "scoreBreakdown": {
+        "commits": 1250,
+        "prs": 895,
+        "bugs": 3,
+        "enhancements": 39,
+        "documentation": 17,
+        "others": 14,
+        "projects": 40
+      },
+      "lastActiveDays": 5,
+      "rank": 2
+    },
+    {
+      "username": "lakinmindfire",
+      "id": 80667930,
+      "avatar_url": "https://avatars.githubusercontent.com/u/80667930?v=4",
+      "html_url": "https://github.com/lakinmindfire",
+      "totalCommits": 231,
+      "totalPRs": 57,
+      "avgCommitsPerPR": 4.05,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 5,
+        "documentation": 12,
+        "others": 7,
+        "total": 24
+      },
+      "projectsWorkingOn": 18,
+      "projects": [
+        "Canvas Editor",
+        "FMDAPI Node Weaver",
+        "Extension Methods",
+        "Angular Canvas Editor",
+        "MobileQuickLaunchKit-iOS",
+        "MobileQuickLaunchKit-Android",
+        "QuickLaunchReactNativeKit",
+        "neo-pusher",
+        "react-text-igniter",
+        "sqlrag",
+        "Page Builder",
+        "Pivothead",
+        "OpenRecap",
+        "Document Editor",
+        "Ignix UI",
+        "AUTOTEST",
+        "Next.js Fortress",
+        "Mindfire Digital Website"
+      ],
+      "byProject": {
+        "Canvas Editor": {
+          "commits": 6,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "FMDAPI Node Weaver": {
+          "commits": 6,
+          "prs": 2,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Extension Methods": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 1,
+            "others": 0
+          }
+        },
+        "Angular Canvas Editor": {
+          "commits": 6,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "MobileQuickLaunchKit-iOS": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "MobileQuickLaunchKit-Android": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "QuickLaunchReactNativeKit": {
+          "commits": 4,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "neo-pusher": {
+          "commits": 6,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "react-text-igniter": {
+          "commits": 4,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "sqlrag": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Page Builder": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Pivothead": {
+          "commits": 4,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 2,
+            "others": 0
+          }
+        },
+        "OpenRecap": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Document Editor": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Ignix UI": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 1,
+            "documentation": 7,
+            "others": 1
+          }
+        },
+        "AUTOTEST": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Next.js Fortress": {
+          "commits": 7,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 1,
+            "others": 0
+          }
+        },
+        "Mindfire Digital Website": {
+          "commits": 178,
+          "prs": 55,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 4,
+            "documentation": 1,
+            "others": 6
+          }
+        }
+      },
+      "score": 968,
+      "scoreBreakdown": {
+        "commits": 462,
+        "prs": 285,
+        "bugs": 0,
+        "enhancements": 15,
+        "documentation": 12,
+        "others": 14,
+        "projects": 180
+      },
+      "lastActiveDays": 1,
+      "rank": 3
+    },
+    {
+      "username": "ParasMindfire",
+      "id": 193932396,
+      "avatar_url": "https://avatars.githubusercontent.com/u/193932396?v=4",
+      "html_url": "https://github.com/ParasMindfire",
+      "totalCommits": 197,
+      "totalPRs": 30,
+      "avgCommitsPerPR": 6.57,
+      "issues": {
+        "bugs": 6,
+        "enhancements": 19,
+        "documentation": 15,
+        "others": 0,
+        "total": 40
+      },
+      "projectsWorkingOn": 3,
+      "projects": [
+        "ESLint Plugin Hub",
+        "Next.js Fortress",
+        "Mindfire Digital Website"
+      ],
+      "byProject": {
+        "ESLint Plugin Hub": {
+          "commits": 10,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 1,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Next.js Fortress": {
+          "commits": 153,
+          "prs": 30,
+          "issues": {
+            "bugs": 6,
+            "enhancements": 18,
+            "documentation": 15,
+            "others": 0
+          }
+        },
+        "Mindfire Digital Website": {
+          "commits": 34,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 664,
+      "scoreBreakdown": {
+        "commits": 394,
+        "prs": 150,
+        "bugs": 18,
+        "enhancements": 57,
+        "documentation": 15,
+        "others": 0,
+        "projects": 30
+      },
+      "lastActiveDays": null,
+      "rank": 4
+    },
+    {
+      "username": "jyotiprakashmfsi",
+      "id": 194057545,
+      "avatar_url": "https://avatars.githubusercontent.com/u/194057545?v=4",
+      "html_url": "https://github.com/jyotiprakashmfsi",
+      "totalCommits": 183,
+      "totalPRs": 8,
+      "avgCommitsPerPR": 22.88,
+      "issues": {
+        "bugs": 1,
+        "enhancements": 21,
+        "documentation": 0,
+        "others": 22,
+        "total": 44
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["ESLint Plugin Hub", "Ignix UI"],
+      "byProject": {
+        "ESLint Plugin Hub": {
+          "commits": 8,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Ignix UI": {
+          "commits": 175,
+          "prs": 8,
+          "issues": {
+            "bugs": 1,
+            "enhancements": 21,
+            "documentation": 0,
+            "others": 22
+          }
+        }
+      },
+      "score": 536,
+      "scoreBreakdown": {
+        "commits": 366,
+        "prs": 40,
+        "bugs": 3,
+        "enhancements": 63,
+        "documentation": 0,
+        "others": 44,
+        "projects": 20
+      },
+      "lastActiveDays": null,
+      "rank": 5
+    },
+    {
+      "username": "madhav-nasit",
+      "id": 121153274,
+      "avatar_url": "https://avatars.githubusercontent.com/u/121153274?v=4",
+      "html_url": "https://github.com/madhav-nasit",
+      "totalCommits": 186,
+      "totalPRs": 3,
+      "avgCommitsPerPR": 62,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["QuickLaunchReactNativeKit"],
+      "byProject": {
+        "QuickLaunchReactNativeKit": {
+          "commits": 186,
+          "prs": 3,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 397,
+      "scoreBreakdown": {
+        "commits": 372,
+        "prs": 15,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 6
+    },
+    {
+      "username": "ashutosh-jena-mindfire",
+      "id": 116242186,
+      "avatar_url": "https://avatars.githubusercontent.com/u/116242186?v=4",
+      "html_url": "https://github.com/ashutosh-jena-mindfire",
+      "totalCommits": 135,
+      "totalPRs": 11,
+      "avgCommitsPerPR": 12.27,
+      "issues": {
+        "bugs": 1,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 4,
+        "total": 5
+      },
+      "projectsWorkingOn": 3,
+      "projects": [
+        "Canvas Editor",
+        "Angular Canvas Editor",
+        "Mindfire Digital Website"
+      ],
+      "byProject": {
+        "Canvas Editor": {
+          "commits": 81,
+          "prs": 6,
+          "issues": {
+            "bugs": 1,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 4
+          }
+        },
+        "Angular Canvas Editor": {
+          "commits": 30,
+          "prs": 3,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Mindfire Digital Website": {
+          "commits": 24,
+          "prs": 2,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 366,
+      "scoreBreakdown": {
+        "commits": 270,
+        "prs": 55,
+        "bugs": 3,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 8,
+        "projects": 30
+      },
+      "lastActiveDays": null,
+      "rank": 7
+    },
+    {
+      "username": "subhranshus-mindfire",
+      "id": 217167363,
+      "avatar_url": "https://avatars.githubusercontent.com/u/217167363?v=4",
+      "html_url": "https://github.com/subhranshus-mindfire",
+      "totalCommits": 138,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 6,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 25,
+        "total": 31
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 138,
+          "prs": 0,
+          "issues": {
+            "bugs": 6,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 25
+          }
+        }
+      },
+      "score": 354,
+      "scoreBreakdown": {
+        "commits": 276,
+        "prs": 0,
+        "bugs": 18,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 50,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 8
+    },
+    {
+      "username": "akashdeep-singh-multani",
+      "id": 184540593,
+      "avatar_url": "https://avatars.githubusercontent.com/u/184540593?v=4",
+      "html_url": "https://github.com/akashdeep-singh-multani",
+      "totalCommits": 110,
+      "totalPRs": 12,
+      "avgCommitsPerPR": 9.17,
+      "issues": {
+        "bugs": 8,
+        "enhancements": 8,
+        "documentation": 1,
+        "others": 1,
+        "total": 18
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Pivothead"],
+      "byProject": {
+        "Pivothead": {
+          "commits": 110,
+          "prs": 12,
+          "issues": {
+            "bugs": 8,
+            "enhancements": 8,
+            "documentation": 1,
+            "others": 1
+          }
+        }
+      },
+      "score": 341,
+      "scoreBreakdown": {
+        "commits": 220,
+        "prs": 60,
+        "bugs": 24,
+        "enhancements": 24,
+        "documentation": 1,
+        "others": 2,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 9
+    },
+    {
+      "username": "ayusmanmindfire",
+      "id": 182596903,
+      "avatar_url": "https://avatars.githubusercontent.com/u/182596903?v=4",
+      "html_url": "https://github.com/ayusmanmindfire",
+      "totalCommits": 134,
+      "totalPRs": 4,
+      "avgCommitsPerPR": 33.5,
+      "issues": {
+        "bugs": 1,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 1
+      },
+      "projectsWorkingOn": 3,
+      "projects": [
+        "Page Builder",
+        "Multi Cloud Monorepo Boilerplate",
+        "Mindfire Digital Website"
+      ],
+      "byProject": {
+        "Page Builder": {
+          "commits": 108,
+          "prs": 0,
+          "issues": {
+            "bugs": 1,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Multi Cloud Monorepo Boilerplate": {
+          "commits": 18,
+          "prs": 4,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Mindfire Digital Website": {
+          "commits": 8,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 321,
+      "scoreBreakdown": {
+        "commits": 268,
+        "prs": 20,
+        "bugs": 3,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 30
+      },
+      "lastActiveDays": null,
+      "rank": 10
+    },
+    {
+      "username": "sanobery",
+      "id": 117646878,
+      "avatar_url": "https://avatars.githubusercontent.com/u/117646878?v=4",
+      "html_url": "https://github.com/sanobery",
+      "totalCommits": 133,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 17,
+        "total": 17
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 133,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 17
+          }
+        }
+      },
+      "score": 310,
+      "scoreBreakdown": {
+        "commits": 266,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 34,
+        "projects": 10
+      },
+      "lastActiveDays": 2,
+      "rank": 11
+    },
+    {
+      "username": "ssswagatss",
+      "id": 7521181,
+      "avatar_url": "https://avatars.githubusercontent.com/u/7521181?v=4",
+      "html_url": "https://github.com/ssswagatss",
+      "totalCommits": 129,
+      "totalPRs": 4,
+      "avgCommitsPerPR": 32.25,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 1,
+        "others": 1,
+        "total": 2
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Extension Methods"],
+      "byProject": {
+        "Extension Methods": {
+          "commits": 129,
+          "prs": 4,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 1,
+            "others": 1
+          }
+        }
+      },
+      "score": 291,
+      "scoreBreakdown": {
+        "commits": 258,
+        "prs": 20,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 1,
+        "others": 2,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 12
+    },
+    {
+      "username": "Bhupesh-MS",
+      "id": 120394376,
+      "avatar_url": "https://avatars.githubusercontent.com/u/120394376?v=4",
+      "html_url": "https://github.com/Bhupesh-MS",
+      "totalCommits": 126,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["NFT Marketplace"],
+      "byProject": {
+        "NFT Marketplace": {
+          "commits": 126,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 262,
+      "scoreBreakdown": {
+        "commits": 252,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 13
+    },
+    {
+      "username": "Siddharth-1698",
+      "id": 66638045,
+      "avatar_url": "https://avatars.githubusercontent.com/u/66638045?v=4",
+      "html_url": "https://github.com/Siddharth-1698",
+      "totalCommits": 123,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["neo-pusher"],
+      "byProject": {
+        "neo-pusher": {
+          "commits": 123,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 256,
+      "scoreBreakdown": {
+        "commits": 246,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 14
+    },
+    {
+      "username": "saradab-mindfire",
+      "id": 115465143,
+      "avatar_url": "https://avatars.githubusercontent.com/u/115465143?v=4",
+      "html_url": "https://github.com/saradab-mindfire",
+      "totalCommits": 56,
+      "totalPRs": 23,
+      "avgCommitsPerPR": 2.43,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["TextIgniter"],
+      "byProject": {
+        "TextIgniter": {
+          "commits": 56,
+          "prs": 23,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 237,
+      "scoreBreakdown": {
+        "commits": 112,
+        "prs": 115,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 15
+    },
+    {
+      "username": "sanghamitradash021",
+      "id": 193920163,
+      "avatar_url": "https://avatars.githubusercontent.com/u/193920163?v=4",
+      "html_url": "https://github.com/sanghamitradash021",
+      "totalCommits": 87,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 2,
+        "enhancements": 1,
+        "documentation": 0,
+        "others": 10,
+        "total": 13
+      },
+      "projectsWorkingOn": 3,
+      "projects": ["ESLint Plugin Hub", "Pivothead", "Ignix UI"],
+      "byProject": {
+        "ESLint Plugin Hub": {
+          "commits": 9,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Pivothead": {
+          "commits": 73,
+          "prs": 0,
+          "issues": {
+            "bugs": 2,
+            "enhancements": 1,
+            "documentation": 0,
+            "others": 10
+          }
+        },
+        "Ignix UI": {
+          "commits": 5,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 233,
+      "scoreBreakdown": {
+        "commits": 174,
+        "prs": 0,
+        "bugs": 6,
+        "enhancements": 3,
+        "documentation": 0,
+        "others": 20,
+        "projects": 30
+      },
+      "lastActiveDays": 8,
+      "rank": 16
+    },
+    {
+      "username": "SandipMF",
+      "id": 113003818,
+      "avatar_url": "https://avatars.githubusercontent.com/u/113003818?v=4",
+      "html_url": "https://github.com/SandipMF",
+      "totalCommits": 83,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 19,
+        "total": 19
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 83,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 19
+          }
+        }
+      },
+      "score": 214,
+      "scoreBreakdown": {
+        "commits": 166,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 38,
+        "projects": 10
+      },
+      "lastActiveDays": 3,
+      "rank": 17
+    },
+    {
+      "username": "SsagarikaR",
+      "id": 193941133,
+      "avatar_url": "https://avatars.githubusercontent.com/u/193941133?v=4",
+      "html_url": "https://github.com/SsagarikaR",
+      "totalCommits": 82,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 6,
+        "enhancements": 4,
+        "documentation": 0,
+        "others": 0,
+        "total": 10
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["ESLint Plugin Hub", "Page Builder"],
+      "byProject": {
+        "ESLint Plugin Hub": {
+          "commits": 9,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Page Builder": {
+          "commits": 73,
+          "prs": 0,
+          "issues": {
+            "bugs": 6,
+            "enhancements": 4,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 214,
+      "scoreBreakdown": {
+        "commits": 164,
+        "prs": 0,
+        "bugs": 18,
+        "enhancements": 12,
+        "documentation": 0,
+        "others": 0,
+        "projects": 20
+      },
+      "lastActiveDays": 26,
+      "rank": 18
+    },
+    {
+      "username": "anilkumarswain140",
+      "id": 142868838,
+      "avatar_url": "https://avatars.githubusercontent.com/u/142868838?v=4",
+      "html_url": "https://github.com/anilkumarswain140",
+      "totalCommits": 62,
+      "totalPRs": 13,
+      "avgCommitsPerPR": 4.77,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["Angular Canvas Editor", "Document Editor"],
+      "byProject": {
+        "Angular Canvas Editor": {
+          "commits": 51,
+          "prs": 5,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Document Editor": {
+          "commits": 11,
+          "prs": 8,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 209,
+      "scoreBreakdown": {
+        "commits": 124,
+        "prs": 65,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 20
+      },
+      "lastActiveDays": null,
+      "rank": 19
+    },
+    {
+      "username": "mfsisudhanshuk",
+      "id": 187290740,
+      "avatar_url": "https://avatars.githubusercontent.com/u/187290740?v=4",
+      "html_url": "https://github.com/mfsisudhanshuk",
+      "totalCommits": 35,
+      "totalPRs": 7,
+      "avgCommitsPerPR": 5,
+      "issues": {
+        "bugs": 9,
+        "enhancements": 15,
+        "documentation": 3,
+        "others": 2,
+        "total": 29
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["Pivothead", "Ignix UI"],
+      "byProject": {
+        "Pivothead": {
+          "commits": 34,
+          "prs": 5,
+          "issues": {
+            "bugs": 6,
+            "enhancements": 15,
+            "documentation": 3,
+            "others": 1
+          }
+        },
+        "Ignix UI": {
+          "commits": 1,
+          "prs": 2,
+          "issues": {
+            "bugs": 3,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 1
+          }
+        }
+      },
+      "score": 204,
+      "scoreBreakdown": {
+        "commits": 70,
+        "prs": 35,
+        "bugs": 27,
+        "enhancements": 45,
+        "documentation": 3,
+        "others": 4,
+        "projects": 20
+      },
+      "lastActiveDays": null,
+      "rank": 20
+    },
+    {
+      "username": "vickysmf",
+      "id": 183806487,
+      "avatar_url": "https://avatars.githubusercontent.com/u/183806487?v=4",
+      "html_url": "https://github.com/vickysmf",
+      "totalCommits": 79,
+      "totalPRs": 1,
+      "avgCommitsPerPR": 79,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 13,
+        "total": 13
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["TextIgniter"],
+      "byProject": {
+        "TextIgniter": {
+          "commits": 79,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 13
+          }
+        }
+      },
+      "score": 199,
+      "scoreBreakdown": {
+        "commits": 158,
+        "prs": 5,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 26,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 21
+    },
+    {
+      "username": "abdulla-mindfire",
+      "id": 105473459,
+      "avatar_url": "https://avatars.githubusercontent.com/u/105473459?v=4",
+      "html_url": "https://github.com/abdulla-mindfire",
+      "totalCommits": 41,
+      "totalPRs": 20,
+      "avgCommitsPerPR": 2.05,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["sqlrag"],
+      "byProject": {
+        "sqlrag": {
+          "commits": 41,
+          "prs": 20,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 192,
+      "scoreBreakdown": {
+        "commits": 82,
+        "prs": 100,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 22
+    },
+    {
+      "username": "manojkmfsi",
+      "id": 134362545,
+      "avatar_url": "https://avatars.githubusercontent.com/u/134362545?v=4",
+      "html_url": "https://github.com/manojkmfsi",
+      "totalCommits": 79,
+      "totalPRs": 1,
+      "avgCommitsPerPR": 79,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["MonoDog"],
+      "byProject": {
+        "MonoDog": {
+          "commits": 79,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 173,
+      "scoreBreakdown": {
+        "commits": 158,
+        "prs": 5,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": 2,
+      "rank": 23
+    },
+    {
+      "username": "NikhilMeshram01",
+      "id": 224547702,
+      "avatar_url": "https://avatars.githubusercontent.com/u/224547702?v=4",
+      "html_url": "https://github.com/NikhilMeshram01",
+      "totalCommits": 49,
+      "totalPRs": 2,
+      "avgCommitsPerPR": 24.5,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 14,
+        "total": 14
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["Ignix UI", "MonoDog"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 34,
+          "prs": 2,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 14
+          }
+        },
+        "MonoDog": {
+          "commits": 15,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 156,
+      "scoreBreakdown": {
+        "commits": 98,
+        "prs": 10,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 28,
+        "projects": 20
+      },
+      "lastActiveDays": 1,
+      "rank": 24
+    },
+    {
+      "username": "jagdish-mindfire",
+      "id": 180177757,
+      "avatar_url": "https://avatars.githubusercontent.com/u/180177757?v=4",
+      "html_url": "https://github.com/jagdish-mindfire",
+      "totalCommits": 47,
+      "totalPRs": 1,
+      "avgCommitsPerPR": 47,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 19,
+        "total": 19
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["TextIgniter"],
+      "byProject": {
+        "TextIgniter": {
+          "commits": 47,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 19
+          }
+        }
+      },
+      "score": 147,
+      "scoreBreakdown": {
+        "commits": 94,
+        "prs": 5,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 38,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 25
+    },
+    {
+      "username": "BasudevBharatBhushan",
+      "id": 64151314,
+      "avatar_url": "https://avatars.githubusercontent.com/u/64151314?v=4",
+      "html_url": "https://github.com/BasudevBharatBhushan",
+      "totalCommits": 48,
+      "totalPRs": 5,
+      "avgCommitsPerPR": 9.6,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 1,
+        "total": 1
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["FMDAPI Node Weaver", "FileMaker List View Addon"],
+      "byProject": {
+        "FMDAPI Node Weaver": {
+          "commits": 31,
+          "prs": 5,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 1
+          }
+        },
+        "FileMaker List View Addon": {
+          "commits": 17,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 143,
+      "scoreBreakdown": {
+        "commits": 96,
+        "prs": 25,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 2,
+        "projects": 20
+      },
+      "lastActiveDays": null,
+      "rank": 26
+    },
+    {
+      "username": "patisubhakanta",
+      "id": 59618850,
+      "avatar_url": "https://avatars.githubusercontent.com/u/59618850?v=4",
+      "html_url": "https://github.com/patisubhakanta",
+      "totalCommits": 41,
+      "totalPRs": 1,
+      "avgCommitsPerPR": 41,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 4,
+        "documentation": 1,
+        "others": 9,
+        "total": 14
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Pivothead"],
+      "byProject": {
+        "Pivothead": {
+          "commits": 41,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 4,
+            "documentation": 1,
+            "others": 9
+          }
+        }
+      },
+      "score": 128,
+      "scoreBreakdown": {
+        "commits": 82,
+        "prs": 5,
+        "bugs": 0,
+        "enhancements": 12,
+        "documentation": 1,
+        "others": 18,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 27
+    },
+    {
+      "username": "ankitsaha-mindfire",
+      "id": 235838245,
+      "avatar_url": "https://avatars.githubusercontent.com/u/235838245?v=4",
+      "html_url": "https://github.com/ankitsaha-mindfire",
+      "totalCommits": 56,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["AUTOTEST"],
+      "byProject": {
+        "AUTOTEST": {
+          "commits": 56,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 122,
+      "scoreBreakdown": {
+        "commits": 112,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 28
+    },
+    {
+      "username": "biswalom22",
+      "id": 125389787,
+      "avatar_url": "https://avatars.githubusercontent.com/u/125389787?v=4",
+      "html_url": "https://github.com/biswalom22",
+      "totalCommits": 26,
+      "totalPRs": 8,
+      "avgCommitsPerPR": 3.25,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 3,
+      "projects": ["Canvas Editor", "ESLint Plugin Hub", "Document Editor"],
+      "byProject": {
+        "Canvas Editor": {
+          "commits": 10,
+          "prs": 8,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "ESLint Plugin Hub": {
+          "commits": 11,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Document Editor": {
+          "commits": 5,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 122,
+      "scoreBreakdown": {
+        "commits": 52,
+        "prs": 40,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 30
+      },
+      "lastActiveDays": 17,
+      "rank": 29
+    },
+    {
+      "username": "hemant-sudhanshu",
+      "id": 85334692,
+      "avatar_url": "https://avatars.githubusercontent.com/u/85334692?v=4",
+      "html_url": "https://github.com/hemant-sudhanshu",
+      "totalCommits": 25,
+      "totalPRs": 7,
+      "avgCommitsPerPR": 3.57,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["MobileQuickLaunchKit-iOS", "MobileQuickLaunchKit-Android"],
+      "byProject": {
+        "MobileQuickLaunchKit-iOS": {
+          "commits": 23,
+          "prs": 6,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "MobileQuickLaunchKit-Android": {
+          "commits": 2,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 105,
+      "scoreBreakdown": {
+        "commits": 50,
+        "prs": 35,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 20
+      },
+      "lastActiveDays": null,
+      "rank": 30
+    },
+    {
+      "username": "Ankit-saha-iiitbbsr",
+      "id": 120235923,
+      "avatar_url": "https://avatars.githubusercontent.com/u/120235923?v=4",
+      "html_url": "https://github.com/Ankit-saha-iiitbbsr",
+      "totalCommits": 36,
+      "totalPRs": 1,
+      "avgCommitsPerPR": 36,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["AUTOTEST"],
+      "byProject": {
+        "AUTOTEST": {
+          "commits": 36,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 87,
+      "scoreBreakdown": {
+        "commits": 72,
+        "prs": 5,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 31
+    },
+    {
+      "username": "pratul-mindfire",
+      "id": 104986454,
+      "avatar_url": "https://avatars.githubusercontent.com/u/104986454?v=4",
+      "html_url": "https://github.com/pratul-mindfire",
+      "totalCommits": 34,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["QuickLaunchReactNativeKit"],
+      "byProject": {
+        "QuickLaunchReactNativeKit": {
+          "commits": 34,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 78,
+      "scoreBreakdown": {
+        "commits": 68,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 32
+    },
+    {
+      "username": "Shubh2694",
+      "id": 108745749,
+      "avatar_url": "https://avatars.githubusercontent.com/u/108745749?v=4",
+      "html_url": "https://github.com/Shubh2694",
+      "totalCommits": 31,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["react-text-igniter"],
+      "byProject": {
+        "react-text-igniter": {
+          "commits": 31,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 72,
+      "scoreBreakdown": {
+        "commits": 62,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 33
+    },
+    {
+      "username": "praliptarajoo",
+      "id": 42381761,
+      "avatar_url": "https://avatars.githubusercontent.com/u/42381761?v=4",
+      "html_url": "https://github.com/praliptarajoo",
+      "totalCommits": 21,
+      "totalPRs": 2,
+      "avgCommitsPerPR": 10.5,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["Angular Canvas Editor", "Mindfire Digital Website"],
+      "byProject": {
+        "Angular Canvas Editor": {
+          "commits": 1,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Mindfire Digital Website": {
+          "commits": 20,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 72,
+      "scoreBreakdown": {
+        "commits": 42,
+        "prs": 10,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 20
+      },
+      "lastActiveDays": null,
+      "rank": 34
+    },
+    {
+      "username": "prashant-mindfire",
+      "id": 148045555,
+      "avatar_url": "https://avatars.githubusercontent.com/u/148045555?v=4",
+      "html_url": "https://github.com/prashant-mindfire",
+      "totalCommits": 18,
+      "totalPRs": 5,
+      "avgCommitsPerPR": 3.6,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Mindfire Digital Website"],
+      "byProject": {
+        "Mindfire Digital Website": {
+          "commits": 18,
+          "prs": 5,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 71,
+      "scoreBreakdown": {
+        "commits": 36,
+        "prs": 25,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 35
+    },
+    {
+      "username": "aryanxorian",
+      "id": 29296038,
+      "avatar_url": "https://avatars.githubusercontent.com/u/29296038?v=4",
+      "html_url": "https://github.com/aryanxorian",
+      "totalCommits": 13,
+      "totalPRs": 7,
+      "avgCommitsPerPR": 1.86,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Mindfire Digital Website"],
+      "byProject": {
+        "Mindfire Digital Website": {
+          "commits": 13,
+          "prs": 7,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 71,
+      "scoreBreakdown": {
+        "commits": 26,
+        "prs": 35,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 36
+    },
+    {
+      "username": "iabhishekkumarms",
+      "id": 87860388,
+      "avatar_url": "https://avatars.githubusercontent.com/u/87860388?v=4",
+      "html_url": "https://github.com/iabhishekkumarms",
+      "totalCommits": 15,
+      "totalPRs": 5,
+      "avgCommitsPerPR": 3,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["MobileQuickLaunchKit-Android"],
+      "byProject": {
+        "MobileQuickLaunchKit-Android": {
+          "commits": 15,
+          "prs": 5,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 65,
+      "scoreBreakdown": {
+        "commits": 30,
+        "prs": 25,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 37
+    },
+    {
+      "username": "VershalaTandon",
+      "id": 63102290,
+      "avatar_url": "https://avatars.githubusercontent.com/u/63102290?v=4",
+      "html_url": "https://github.com/VershalaTandon",
+      "totalCommits": 25,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Mindfire Digital Website"],
+      "byProject": {
+        "Mindfire Digital Website": {
+          "commits": 25,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 60,
+      "scoreBreakdown": {
+        "commits": 50,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 38
+    },
+    {
+      "username": "ArnabKMindfire",
+      "id": 103591425,
+      "avatar_url": "https://avatars.githubusercontent.com/u/103591425?v=4",
+      "html_url": "https://github.com/ArnabKMindfire",
+      "totalCommits": 25,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Mindfire Digital Website"],
+      "byProject": {
+        "Mindfire Digital Website": {
+          "commits": 25,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 60,
+      "scoreBreakdown": {
+        "commits": 50,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 39
+    },
+    {
+      "username": "MohdAasim",
+      "id": 79627135,
+      "avatar_url": "https://avatars.githubusercontent.com/u/79627135?v=4",
+      "html_url": "https://github.com/MohdAasim",
+      "totalCommits": 10,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 5,
+        "documentation": 0,
+        "others": 3,
+        "total": 8
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Pivothead"],
+      "byProject": {
+        "Pivothead": {
+          "commits": 10,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 5,
+            "documentation": 0,
+            "others": 3
+          }
+        }
+      },
+      "score": 51,
+      "scoreBreakdown": {
+        "commits": 20,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 15,
+        "documentation": 0,
+        "others": 6,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 40
+    },
+    {
+      "username": "swain1467",
+      "id": 56427833,
+      "avatar_url": "https://avatars.githubusercontent.com/u/56427833?v=4",
+      "html_url": "https://github.com/swain1467",
+      "totalCommits": 15,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["Page Builder", "TextIgniter"],
+      "byProject": {
+        "Page Builder": {
+          "commits": 4,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "TextIgniter": {
+          "commits": 11,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 50,
+      "scoreBreakdown": {
+        "commits": 30,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 20
+      },
+      "lastActiveDays": null,
+      "rank": 41
+    },
+    {
+      "username": "Harshita-mindfire",
+      "id": 84971366,
+      "avatar_url": "https://avatars.githubusercontent.com/u/84971366?v=4",
+      "html_url": "https://github.com/Harshita-mindfire",
+      "totalCommits": 20,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Canvas Editor"],
+      "byProject": {
+        "Canvas Editor": {
+          "commits": 20,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 50,
+      "scoreBreakdown": {
+        "commits": 40,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 42
+    },
+    {
+      "username": "hitesh-mindfire",
+      "id": 172278187,
+      "avatar_url": "https://avatars.githubusercontent.com/u/172278187?v=4",
+      "html_url": "https://github.com/hitesh-mindfire",
+      "totalCommits": 19,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["DeepScanBot"],
+      "byProject": {
+        "DeepScanBot": {
+          "commits": 19,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 48,
+      "scoreBreakdown": {
+        "commits": 38,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 43
+    },
+    {
+      "username": "konark-mindfire",
+      "id": 160819069,
+      "avatar_url": "https://avatars.githubusercontent.com/u/160819069?v=4",
+      "html_url": "https://github.com/konark-mindfire",
+      "totalCommits": 16,
+      "totalPRs": 1,
+      "avgCommitsPerPR": 16,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["MobileQuickLaunchKit-Android"],
+      "byProject": {
+        "MobileQuickLaunchKit-Android": {
+          "commits": 16,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 47,
+      "scoreBreakdown": {
+        "commits": 32,
+        "prs": 5,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 44
+    },
+    {
+      "username": "ankitmindfiretraining-99",
+      "id": 224015823,
+      "avatar_url": "https://avatars.githubusercontent.com/u/224015823?v=4",
+      "html_url": "https://github.com/ankitmindfiretraining-99",
+      "totalCommits": 18,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 18,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 46,
+      "scoreBreakdown": {
+        "commits": 36,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 45
+    },
+    {
+      "username": "ankitsingh252225",
+      "id": 227138911,
+      "avatar_url": "https://avatars.githubusercontent.com/u/227138911?v=4",
+      "html_url": "https://github.com/ankitsingh252225",
+      "totalCommits": 12,
+      "totalPRs": 2,
+      "avgCommitsPerPR": 6,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 12,
+          "prs": 2,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 44,
+      "scoreBreakdown": {
+        "commits": 24,
+        "prs": 10,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 46
+    },
+    {
+      "username": "asishmindfire",
+      "id": 118360815,
+      "avatar_url": "https://avatars.githubusercontent.com/u/118360815?v=4",
+      "html_url": "https://github.com/asishmindfire",
+      "totalCommits": 15,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Canvas Editor"],
+      "byProject": {
+        "Canvas Editor": {
+          "commits": 15,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 40,
+      "scoreBreakdown": {
+        "commits": 30,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 47
+    },
+    {
+      "username": "vcs-anandkr",
+      "id": 215844540,
+      "avatar_url": "https://avatars.githubusercontent.com/u/215844540?v=4",
+      "html_url": "https://github.com/vcs-anandkr",
+      "totalCommits": 3,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 3,
+      "projects": ["ESLint Plugin Hub", "Page Builder", "Pivothead"],
+      "byProject": {
+        "ESLint Plugin Hub": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Page Builder": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "Pivothead": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 36,
+      "scoreBreakdown": {
+        "commits": 6,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 30
+      },
+      "lastActiveDays": null,
+      "rank": 48
+    },
+    {
+      "username": "100xmanas",
+      "id": 147431910,
+      "avatar_url": "https://avatars.githubusercontent.com/u/147431910?v=4",
+      "html_url": "https://github.com/100xmanas",
+      "totalCommits": 11,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 11,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 32,
+      "scoreBreakdown": {
+        "commits": 22,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 49
+    },
+    {
+      "username": "Satyam-Mindfire",
+      "id": 138189810,
+      "avatar_url": "https://avatars.githubusercontent.com/u/138189810?v=4",
+      "html_url": "https://github.com/Satyam-Mindfire",
+      "totalCommits": 11,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["MobileQuickLaunchKit-iOS"],
+      "byProject": {
+        "MobileQuickLaunchKit-iOS": {
+          "commits": 11,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 32,
+      "scoreBreakdown": {
+        "commits": 22,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 50
+    },
+    {
+      "username": "chaudharyvivek",
+      "id": 10649999,
+      "avatar_url": "https://avatars.githubusercontent.com/u/10649999?v=4",
+      "html_url": "https://github.com/chaudharyvivek",
+      "totalCommits": 6,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 2,
+      "projects": ["MobileQuickLaunchKit-iOS", "MobileQuickLaunchKit-Android"],
+      "byProject": {
+        "MobileQuickLaunchKit-iOS": {
+          "commits": 4,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        },
+        "MobileQuickLaunchKit-Android": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 32,
+      "scoreBreakdown": {
+        "commits": 12,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 20
+      },
+      "lastActiveDays": null,
+      "rank": 51
+    },
+    {
+      "username": "JKAryan2003",
+      "id": 138751636,
+      "avatar_url": "https://avatars.githubusercontent.com/u/138751636?v=4",
+      "html_url": "https://github.com/JKAryan2003",
+      "totalCommits": 9,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 1,
+        "total": 1
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Pivothead"],
+      "byProject": {
+        "Pivothead": {
+          "commits": 9,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 1
+          }
+        }
+      },
+      "score": 30,
+      "scoreBreakdown": {
+        "commits": 18,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 2,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 52
+    },
+    {
+      "username": "avishekthapamindfire0822",
+      "id": 123073226,
+      "avatar_url": "https://avatars.githubusercontent.com/u/123073226?v=4",
+      "html_url": "https://github.com/avishekthapamindfire0822",
+      "totalCommits": 7,
+      "totalPRs": 1,
+      "avgCommitsPerPR": 7,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Mindfire Digital Website"],
+      "byProject": {
+        "Mindfire Digital Website": {
+          "commits": 7,
+          "prs": 1,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 29,
+      "scoreBreakdown": {
+        "commits": 14,
+        "prs": 5,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 53
+    },
+    {
+      "username": "rohitrg96",
+      "id": 190622750,
+      "avatar_url": "https://avatars.githubusercontent.com/u/190622750?v=4",
+      "html_url": "https://github.com/rohitrg96",
+      "totalCommits": 9,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Mindfire Digital Website"],
+      "byProject": {
+        "Mindfire Digital Website": {
+          "commits": 9,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 28,
+      "scoreBreakdown": {
+        "commits": 18,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 54
+    },
+    {
+      "username": "geekychandan",
+      "id": 110468423,
+      "avatar_url": "https://avatars.githubusercontent.com/u/110468423?v=4",
+      "html_url": "https://github.com/geekychandan",
+      "totalCommits": 2,
+      "totalPRs": 2,
+      "avgCommitsPerPR": 1,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 2,
+        "total": 2
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["react-text-igniter"],
+      "byProject": {
+        "react-text-igniter": {
+          "commits": 2,
+          "prs": 2,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 2
+          }
+        }
+      },
+      "score": 28,
+      "scoreBreakdown": {
+        "commits": 4,
+        "prs": 10,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 4,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 55
+    },
+    {
+      "username": "VershalaT",
+      "id": 134675427,
+      "avatar_url": "https://avatars.githubusercontent.com/u/134675427?v=4",
+      "html_url": "https://github.com/VershalaT",
+      "totalCommits": 1,
+      "totalPRs": 3,
+      "avgCommitsPerPR": 0.33,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Mindfire Digital Website"],
+      "byProject": {
+        "Mindfire Digital Website": {
+          "commits": 1,
+          "prs": 3,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 27,
+      "scoreBreakdown": {
+        "commits": 2,
+        "prs": 15,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 56
+    },
+    {
+      "username": "SubhenduS1999",
+      "id": 169184262,
+      "avatar_url": "https://avatars.githubusercontent.com/u/169184262?v=4",
+      "html_url": "https://github.com/SubhenduS1999",
+      "totalCommits": 7,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 1,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 1
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Page Builder"],
+      "byProject": {
+        "Page Builder": {
+          "commits": 7,
+          "prs": 0,
+          "issues": {
+            "bugs": 1,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 27,
+      "scoreBreakdown": {
+        "commits": 14,
+        "prs": 0,
+        "bugs": 3,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 57
+    },
+    {
+      "username": "jyotiprakashh",
+      "id": 96424607,
+      "avatar_url": "https://avatars.githubusercontent.com/u/96424607?v=4",
+      "html_url": "https://github.com/jyotiprakashh",
+      "totalCommits": 8,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 8,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 26,
+      "scoreBreakdown": {
+        "commits": 16,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 58
+    },
+    {
+      "username": "taditdash",
+      "id": 11786875,
+      "avatar_url": "https://avatars.githubusercontent.com/u/11786875?v=4",
+      "html_url": "https://github.com/taditdash",
+      "totalCommits": 3,
+      "totalPRs": 2,
+      "avgCommitsPerPR": 1.5,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Extension Methods"],
+      "byProject": {
+        "Extension Methods": {
+          "commits": 3,
+          "prs": 2,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 26,
+      "scoreBreakdown": {
+        "commits": 6,
+        "prs": 10,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 59
+    },
+    {
+      "username": "Bhupesh-mfsi",
+      "id": 137804674,
+      "avatar_url": "https://avatars.githubusercontent.com/u/137804674?v=4",
+      "html_url": "https://github.com/Bhupesh-mfsi",
+      "totalCommits": 7,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["NFT Marketplace"],
+      "byProject": {
+        "NFT Marketplace": {
+          "commits": 7,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 24,
+      "scoreBreakdown": {
+        "commits": 14,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 60
+    },
+    {
+      "username": "narayan-mindfire",
+      "id": 194910262,
+      "avatar_url": "https://avatars.githubusercontent.com/u/194910262?v=4",
+      "html_url": "https://github.com/narayan-mindfire",
+      "totalCommits": 5,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 5,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 20,
+      "scoreBreakdown": {
+        "commits": 10,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 61
+    },
+    {
+      "username": "dipika-mindfire",
+      "id": 236581176,
+      "avatar_url": "https://avatars.githubusercontent.com/u/236581176?v=4",
+      "html_url": "https://github.com/dipika-mindfire",
+      "totalCommits": 4,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Smart-CodeGen-ML-Agent"],
+      "byProject": {
+        "Smart-CodeGen-ML-Agent": {
+          "commits": 4,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 18,
+      "scoreBreakdown": {
+        "commits": 8,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 62
+    },
+    {
+      "username": "SiriMuramulla268",
+      "id": 55407033,
+      "avatar_url": "https://avatars.githubusercontent.com/u/55407033?v=4",
+      "html_url": "https://github.com/SiriMuramulla268",
+      "totalCommits": 2,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["AUTOTEST"],
+      "byProject": {
+        "AUTOTEST": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 14,
+      "scoreBreakdown": {
+        "commits": 4,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": 1,
+      "rank": 63
+    },
+    {
+      "username": "alokrajmindfire",
+      "id": 225856934,
+      "avatar_url": "https://avatars.githubusercontent.com/u/225856934?v=4",
+      "html_url": "https://github.com/alokrajmindfire",
+      "totalCommits": 2,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["AUTOTEST"],
+      "byProject": {
+        "AUTOTEST": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 14,
+      "scoreBreakdown": {
+        "commits": 4,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": 24,
+      "rank": 64
+    },
+    {
+      "username": "jagannathmfs",
+      "id": 87357401,
+      "avatar_url": "https://avatars.githubusercontent.com/u/87357401?v=4",
+      "html_url": "https://github.com/jagannathmfs",
+      "totalCommits": 2,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["FireKubeX"],
+      "byProject": {
+        "FireKubeX": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 14,
+      "scoreBreakdown": {
+        "commits": 4,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 65
+    },
+    {
+      "username": "adityagantayat",
+      "id": 68806094,
+      "avatar_url": "https://avatars.githubusercontent.com/u/68806094?v=4",
+      "html_url": "https://github.com/adityagantayat",
+      "totalCommits": 2,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 14,
+      "scoreBreakdown": {
+        "commits": 4,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 66
+    },
+    {
+      "username": "vamsivallepu",
+      "id": 53989958,
+      "avatar_url": "https://avatars.githubusercontent.com/u/53989958?v=4",
+      "html_url": "https://github.com/vamsivallepu",
+      "totalCommits": 2,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Multi-Agent Knowledge Graph Chatbot"],
+      "byProject": {
+        "Multi-Agent Knowledge Graph Chatbot": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 14,
+      "scoreBreakdown": {
+        "commits": 4,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 67
+    },
+    {
+      "username": "VenkataSaiChandrakanthReddyVemireddy",
+      "id": 52132401,
+      "avatar_url": "https://avatars.githubusercontent.com/u/52132401?v=4",
+      "html_url": "https://github.com/VenkataSaiChandrakanthReddyVemireddy",
+      "totalCommits": 2,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Multi-Agent Knowledge Graph Chatbot"],
+      "byProject": {
+        "Multi-Agent Knowledge Graph Chatbot": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 14,
+      "scoreBreakdown": {
+        "commits": 4,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 68
+    },
+    {
+      "username": "Abhiadi12",
+      "id": 57040284,
+      "avatar_url": "https://avatars.githubusercontent.com/u/57040284?v=4",
+      "html_url": "https://github.com/Abhiadi12",
+      "totalCommits": 2,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Pivothead"],
+      "byProject": {
+        "Pivothead": {
+          "commits": 2,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 14,
+      "scoreBreakdown": {
+        "commits": 4,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 69
+    },
+    {
+      "username": "rsumit123",
+      "id": 24500659,
+      "avatar_url": "https://avatars.githubusercontent.com/u/24500659?v=4",
+      "html_url": "https://github.com/rsumit123",
+      "totalCommits": 1,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["AIHealthCounsellor"],
+      "byProject": {
+        "AIHealthCounsellor": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 12,
+      "scoreBreakdown": {
+        "commits": 2,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 70
+    },
+    {
+      "username": "Dibas2421",
+      "id": 157849988,
+      "avatar_url": "https://avatars.githubusercontent.com/u/157849988?v=4",
+      "html_url": "https://github.com/Dibas2421",
+      "totalCommits": 1,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["AUTOTEST"],
+      "byProject": {
+        "AUTOTEST": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 12,
+      "scoreBreakdown": {
+        "commits": 2,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 71
+    },
+    {
+      "username": "divyarbehera",
+      "id": 20682504,
+      "avatar_url": "https://avatars.githubusercontent.com/u/20682504?v=4",
+      "html_url": "https://github.com/divyarbehera",
+      "totalCommits": 1,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Extension Methods"],
+      "byProject": {
+        "Extension Methods": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 12,
+      "scoreBreakdown": {
+        "commits": 2,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 72
+    },
+    {
+      "username": "preetiganagi",
+      "id": 34021994,
+      "avatar_url": "https://avatars.githubusercontent.com/u/34021994?v=4",
+      "html_url": "https://github.com/preetiganagi",
+      "totalCommits": 1,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 12,
+      "scoreBreakdown": {
+        "commits": 2,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 73
+    },
+    {
+      "username": "nowoptics-deepak",
+      "id": 205750247,
+      "avatar_url": "https://avatars.githubusercontent.com/u/205750247?v=4",
+      "html_url": "https://github.com/nowoptics-deepak",
+      "totalCommits": 1,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["Ignix UI"],
+      "byProject": {
+        "Ignix UI": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 12,
+      "scoreBreakdown": {
+        "commits": 2,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 74
+    },
+    {
+      "username": "sumanb-mindfire",
+      "id": 190595003,
+      "avatar_url": "https://avatars.githubusercontent.com/u/190595003?v=4",
+      "html_url": "https://github.com/sumanb-mindfire",
+      "totalCommits": 1,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["OpenRecap"],
+      "byProject": {
+        "OpenRecap": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 12,
+      "scoreBreakdown": {
+        "commits": 2,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 75
+    },
+    {
+      "username": "mfsi-waseema",
+      "id": 5079169,
+      "avatar_url": "https://avatars.githubusercontent.com/u/5079169?v=4",
+      "html_url": "https://github.com/mfsi-waseema",
+      "totalCommits": 1,
+      "totalPRs": 0,
+      "avgCommitsPerPR": 0,
+      "issues": {
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "total": 0
+      },
+      "projectsWorkingOn": 1,
+      "projects": ["QuickLaunchReactNativeKit"],
+      "byProject": {
+        "QuickLaunchReactNativeKit": {
+          "commits": 1,
+          "prs": 0,
+          "issues": {
+            "bugs": 0,
+            "enhancements": 0,
+            "documentation": 0,
+            "others": 0
+          }
+        }
+      },
+      "score": 12,
+      "scoreBreakdown": {
+        "commits": 2,
+        "prs": 0,
+        "bugs": 0,
+        "enhancements": 0,
+        "documentation": 0,
+        "others": 0,
+        "projects": 10
+      },
+      "lastActiveDays": null,
+      "rank": 76
+    }
+  ]
+}
