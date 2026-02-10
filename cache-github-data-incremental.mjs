@@ -8,7 +8,6 @@ import path from "path";
 
 const CONFIG = {
   GITHUB_TOKEN: "",
-  OWNER: "mindfiredigital",
 
   // Input files
   CONTRIBUTORS_FILE: "./src/app/projects/assets/contributors.json",
@@ -171,13 +170,27 @@ async function fetchAllCommitsFromDefaultBranch(owner, repo, defaultBranch) {
 }
 
 // ============================================================================
-// FETCH ALL MERGED PRS TO DEFAULT BRANCH
+// FETCH ALL MERGED PRS (INCLUDING INDIRECT MERGES TO DEFAULT BRANCH)
 // ============================================================================
 
 async function fetchAllMergedPRsToDefault(owner, repo, defaultBranch) {
-  console.log(`   🔍 Fetching merged PRs to ${defaultBranch}...`);
+  console.log(
+    `   🔍 Fetching all merged PRs (including indirect merges to ${defaultBranch})...`
+  );
+
+  // Step 1: Get all commits from default branch first
+  const defaultBranchCommits = await fetchAllCommitsFromDefaultBranch(
+    owner,
+    repo,
+    defaultBranch
+  );
+  const defaultBranchSHAs = new Set(defaultBranchCommits.map((c) => c.sha));
+
+  console.log(`   📊 Default branch has ${defaultBranchSHAs.size} commits`);
+  console.log(`   🔍 Fetching all merged PRs...`);
+
   let page = 1;
-  let allPRs = [];
+  let allMergedPRs = [];
   let apiCalls = 0;
 
   while (true) {
@@ -190,15 +203,14 @@ async function fetchAllMergedPRsToDefault(owner, repo, defaultBranch) {
 
       if (!prs || prs.length === 0) break;
 
-      // Filter: only merged PRs to default branch
+      // Filter: all merged PRs (not just to default branch)
       const mergedPRs = prs.filter((pr) => {
-        const isDefaultBranch = pr.base?.ref === defaultBranch;
         const isMerged = pr.merged_at !== null;
         const notBot = !isBot(pr.user?.login);
-        return isDefaultBranch && isMerged && notBot;
+        return isMerged && notBot;
       });
 
-      allPRs = allPRs.concat(mergedPRs);
+      allMergedPRs = allMergedPRs.concat(mergedPRs);
 
       if (prs.length < 100) break;
       page++;
@@ -208,10 +220,24 @@ async function fetchAllMergedPRsToDefault(owner, repo, defaultBranch) {
     }
   }
 
+  console.log(`   📊 Total merged PRs found: ${allMergedPRs.length}`);
+  console.log(`   🔍 Filtering PRs whose commits reached ${defaultBranch}...`);
+
+  // Step 2: Filter PRs whose merge commit is in default branch
+  const prsInDefaultBranch = [];
+
+  for (const pr of allMergedPRs) {
+    // Check if the PR's merge commit SHA is in the default branch
+    if (pr.merge_commit_sha && defaultBranchSHAs.has(pr.merge_commit_sha)) {
+      prsInDefaultBranch.push(pr);
+    }
+  }
+
   console.log(
-    `   ✅ Found ${allPRs.length} merged PRs (${apiCalls} API calls)`
+    `   ✅ Found ${prsInDefaultBranch.length} PRs that made it to ${defaultBranch} (${apiCalls} API calls)`
   );
-  return allPRs;
+
+  return prsInDefaultBranch;
 }
 
 // ============================================================================
@@ -308,12 +334,23 @@ async function processProject(projectId, projectTitle, repoName) {
     const defaultBranch = await fetchDefaultBranch(CONFIG.OWNER, repoName);
     console.log(`   🌿 Default branch: ${defaultBranch}`);
 
-    // Step 2: Fetch all data in parallel
-    const [commits, mergedPRs, issues] = await Promise.all([
-      fetchAllCommitsFromDefaultBranch(CONFIG.OWNER, repoName, defaultBranch),
-      fetchAllMergedPRsToDefault(CONFIG.OWNER, repoName, defaultBranch),
-      fetchCategorizedIssues(CONFIG.OWNER, repoName),
-    ]);
+    // Step 2: Fetch PRs (which internally fetches commits too)
+    const mergedPRs = await fetchAllMergedPRsToDefault(
+      CONFIG.OWNER,
+      repoName,
+      defaultBranch
+    );
+
+    // Step 3: Fetch issues
+    const issues = await fetchCategorizedIssues(CONFIG.OWNER, repoName);
+
+    // Note: We don't need to fetch commits separately since fetchAllMergedPRsToDefault already does it
+    // But we'll fetch them again for the final output to keep the structure consistent
+    const commits = await fetchAllCommitsFromDefaultBranch(
+      CONFIG.OWNER,
+      repoName,
+      defaultBranch
+    );
 
     return {
       project_id: projectId,
@@ -334,6 +371,8 @@ async function processProject(projectId, projectTitle, repoName) {
         title: pr.title,
         merged_at: pr.merged_at,
         created_at: pr.created_at,
+        base_ref: pr.base?.ref, // Track which branch it was originally raised against
+        merge_commit_sha: pr.merge_commit_sha, // Track the merge commit
       })),
       issues: {
         bugs: issues.bugs.map((i) => ({
@@ -386,7 +425,10 @@ async function cacheLeaderboardData() {
   console.log("=".repeat(80));
   console.log(`Fetching:`);
   console.log(`  📝 Commits in default branch`);
-  console.log(`  🔀 Merged PRs to default branch`);
+  console.log(`  🔀 ALL merged PRs whose code made it to default branch`);
+  console.log(
+    `     (includes PRs to dev/feature branches that later merged to main)`
+  );
   console.log(`  🐛 Categorized issues (bugs, enhancements, docs, others)`);
   console.log(`  📊 Project participation\n`);
 
@@ -496,6 +538,7 @@ async function cacheLeaderboardData() {
     console.log(`   Projects: ${stats.totalProjects}`);
     console.log(`   Total Commits: ${stats.totalCommits}`);
     console.log(`   Total Merged PRs: ${stats.totalMergedPRs}`);
+    console.log(`   (includes PRs to any branch that eventually reached main)`);
     console.log(`   Total Issues: ${stats.totalIssues}`);
     console.log(`📁 Saved to: ${CONFIG.CACHE_FILE}`);
   }
