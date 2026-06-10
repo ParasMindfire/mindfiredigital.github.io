@@ -1,77 +1,51 @@
-import React from "react";
-import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AboutSegmentSection from "./components/AboutSegmentSection";
-import { missonSectionData, whyOpenSourceSectionData } from "@/constants";
-import aboutUs from "../../../public/images/about-us.webp";
-import meta from "../../metadata/metadata.json";
+import {
+  MISSION_SECTION_DATA,
+  WHY_OPEN_SOURCE_SECTION_DATA,
+  ABOUT_HERO,
+  ABOUT_MISSION,
+  ABOUT_WHY_OPEN_SOURCE,
+  ABOUT_CONTRIBUTIONS,
+} from "@/constants";
 
-export const metadata: Metadata = {
-  title: meta["About"].title,
-  description: meta["About"].description,
-
-  openGraph: {
-    title: meta["About"].title,
-    description: meta["About"].description,
-    images: {
-      url: meta["About"].openGraph.images,
-      height: "627",
-      width: "1200",
-    },
-    url: meta["About"].openGraph.url,
-    type: "website",
-    siteName: "Mindfire Digital LLP",
-    locale: "en_US",
-  },
-  twitter: {
-    card: "app",
-    title: meta["About"].title,
-    description: meta["About"].description,
-    site: "@mindfires",
-    creator: "@mindfires",
-    app: {
-      name: "twitter_app",
-      id: {
-        iphone: "twitter_app://iphone",
-        ipad: "twitter_app://ipad",
-        googleplay: "twitter_app://googleplay",
-      },
-    },
-  },
-};
-
+/* About page with hero + informational sections */
 const About = () => {
   return (
     <>
-      <section className='bg-slate-50'>
+      {/* Hero section — bg-slate-50 replaced with semantic mf-bg-subtle */}
+      <section className='bg-mf-bg-subtle'>
         <div className='flex flex-col lg:flex-row justify-between lg:p-6 lg:px-10'>
+          {/* Hero text content */}
           <div className='px-8 lg:basis-2/5 py-16 lg:pl-0'>
-            <h1 className='text-4xl leading-10 md:text-5xl max-w-lg md:!leading-[3.5rem] tracking-wide text-mindfire-text-black'>
-              Where Innovation Knows no Boundaries.
+            <h1 className='text-4xl leading-10 md:text-5xl max-w-lg md:!leading-[3.5rem] tracking-wide text-mf-dark'>
+              {ABOUT_HERO.heading}
             </h1>
+
             <p className='mt-6 text-xl text-mf-light-grey tracking-wide'>
-              We code, we collaborate, and together we create open source
-              wonders.
+              {ABOUT_HERO.subheading}
             </p>
+
+            {/* CTA buttons — use canonical btn-mf-primary */}
             <div className='flex flex-wrap items-start gap-6 mt-10'>
-              <Link
-                href='/projects'
-                className='bg-mf-red text-center text-white tracking-widest capitalize rounded-full px-8 py-3'
-              >
-                explore projects
+              <Link href='/projects' className='btn-mf-primary tracking-widest'>
+                {ABOUT_HERO.exploreLabel}
               </Link>
+
               <Link
                 target='_blank'
-                href='https://www.mindfiresolutions.com/contact-us/'
-                className='bg-mf-red text-center text-white tracking-widest capitalize rounded-full px-8 py-3'
+                href={ABOUT_HERO.contactHref}
+                className='btn-mf-primary tracking-widest'
               >
-                contact us
+                {ABOUT_HERO.contactLabel}
               </Link>
             </div>
           </div>
+
+          {/* Hero image */}
           <Image
-            src={aboutUs}
+            src='/images/about-us.webp'
             alt='women-standing-beside-corkboard'
             className='max-lg:w-full object-contain'
             height='500'
@@ -80,30 +54,34 @@ const About = () => {
           />
         </div>
       </section>
+
+      {/* Mission section */}
       <AboutSegmentSection
-        title='our mission'
-        description='Our mission is to collaborate with the open source community, ignite creativity, share knowledge, and develop solutions that drive positive global change.'
-        data={missonSectionData}
+        title={ABOUT_MISSION.title}
+        description={ABOUT_MISSION.description}
+        data={MISSION_SECTION_DATA}
       />
+
+      {/* Why open source section */}
       <AboutSegmentSection
-        title='why open source?'
-        description='Open source fuels collaboration, transparency, and perpetual
-          advancement, inspiring innovation and fostering a culture of shared
-          knowledge and growth.'
-        data={whyOpenSourceSectionData}
+        title={ABOUT_WHY_OPEN_SOURCE.title}
+        description={ABOUT_WHY_OPEN_SOURCE.description}
+        data={WHY_OPEN_SOURCE_SECTION_DATA}
         className='mt-28'
       />
+
+      {/* Contributions CTA section */}
       <AboutSegmentSection
-        title='Our Contributions'
-        description='Explore our growing list of open source projects, ranging from software libraries and frameworks to tools and utilities. We are committed to actively contributing to these projects and maintaining a strong presence in the open source ecosystem.'
+        title={ABOUT_CONTRIBUTIONS.title}
+        description={ABOUT_CONTRIBUTIONS.description}
         className='mb-24'
       >
         <div className='text-center'>
           <Link
             href='/projects#all-projects'
-            className='bg-mf-red tracking-wider text-white rounded-full px-5 py-3'
+            className='btn-mf-primary tracking-wider'
           >
-            Explore projects
+            {ABOUT_CONTRIBUTIONS.exploreLabel}
           </Link>
         </div>
       </AboutSegmentSection>

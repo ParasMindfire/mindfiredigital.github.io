@@ -1,33 +1,29 @@
 import Link from "next/link";
-import React from "react";
-import { privacyPolicyContentData } from "@/constants";
+import { privacyPolicyContentData, PRIVACY_POLICY_INTRO } from "@/constants";
 
+/* Privacy Policy page */
 const PrivacyPolicy = () => {
   return (
     <div className='max-w-4xl mx-auto my-10 px-6'>
-      <p className='tracking-wider text-mindfire-content-p-text-color'>
-        This Privacy Policy governs the manner in which
-        mindfiredigital.github.io collects, uses, maintains and discloses
-        information collected from users (each, a “User”) of the{" "}
+      {/* mindfire-content-p-text-color → mf-light-grey */}
+      <p className='tracking-wider text-mf-light-grey'>
+        {PRIVACY_POLICY_INTRO.text}{" "}
         <Link
-          href='https://mindfiredigital.github.io/'
+          href={PRIVACY_POLICY_INTRO.linkHref}
           className='text-mf-red hover:text-blue-400'
         >
-          https://mindfiredigital.github.io/
+          {PRIVACY_POLICY_INTRO.linkLabel}
         </Link>{" "}
-        website (“Site”). This privacy policy applies to the Site and all
-        products and services offered by Mindfire Digital GitHub.
+        {PRIVACY_POLICY_INTRO.suffix}
       </p>
 
       {privacyPolicyContentData.map(({ title, description }, index) => {
         return (
           <div key={index}>
-            <h3 className='mt-10 mb-2 text-mindfire-content-p-text-color font-semibold text-lg tracking-wider'>
+            <h3 className='mt-10 mb-2 text-mf-light-grey font-semibold text-lg tracking-wider'>
               {title}
             </h3>
-            <p className='tracking-wider text-mindfire-content-p-text-color'>
-              {description}
-            </p>
+            <p className='tracking-wider text-mf-light-grey'>{description}</p>
           </div>
         );
       })}

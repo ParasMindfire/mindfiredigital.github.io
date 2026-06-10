@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-10T05:56:24.784Z",
+  "generated_at": "2026-05-08T11:58:56.353Z",
   "period": "monthly",
   "month_label": "August 2025",
   "month_key": "2025-08",
@@ -26,12 +26,12 @@
         "medium": 10,
         "large": 10
       },
-      "total_score": 521,
-      "code_score": 433,
+      "total_score": 531,
+      "code_score": 443,
       "community_score": 8,
       "quality_score": 80,
       "score_breakdown": {
-        "pr_score": 245,
+        "pr_score": 255,
         "commits_score": 188,
         "pr_reviews_score": 0,
         "code_comments_score": 0,
@@ -50,7 +50,7 @@
         "issue_comments": 0,
         "issue_comments_total": 0
       },
-      "lastActiveDays": 6
+      "lastActiveDays": 25
     },
     {
       "rank": 2,
@@ -73,12 +73,12 @@
         "medium": 8,
         "large": 10
       },
-      "total_score": 397,
-      "code_score": 305,
+      "total_score": 406,
+      "code_score": 314,
       "community_score": 21,
       "quality_score": 71,
       "score_breakdown": {
-        "pr_score": 197,
+        "pr_score": 206,
         "commits_score": 108,
         "pr_reviews_score": 0,
         "code_comments_score": 0,
@@ -97,7 +97,7 @@
         "issue_comments": 1,
         "issue_comments_total": 1
       },
-      "lastActiveDays": 4
+      "lastActiveDays": null
     },
     {
       "rank": 3,
@@ -120,12 +120,12 @@
         "medium": 1,
         "large": 1
       },
-      "total_score": 120,
-      "code_score": 96,
+      "total_score": 121,
+      "code_score": 97,
       "community_score": 12,
       "quality_score": 12,
       "score_breakdown": {
-        "pr_score": 35,
+        "pr_score": 36,
         "commits_score": 58,
         "pr_reviews_score": 3,
         "code_comments_score": 0,
@@ -144,7 +144,7 @@
         "issue_comments": 0,
         "issue_comments_total": 0
       },
-      "lastActiveDays": 3
+      "lastActiveDays": null
     },
     {
       "rank": 4,
@@ -167,12 +167,12 @@
         "medium": 0,
         "large": 6
       },
-      "total_score": 82,
-      "code_score": 63,
+      "total_score": 85,
+      "code_score": 66,
       "community_score": 8,
       "quality_score": 11,
       "score_breakdown": {
-        "pr_score": 51,
+        "pr_score": 54,
         "commits_score": 12,
         "pr_reviews_score": 0,
         "code_comments_score": 0,
@@ -261,12 +261,12 @@
         "medium": 0,
         "large": 2
       },
-      "total_score": 49,
-      "code_score": 33,
+      "total_score": 50,
+      "code_score": 34,
       "community_score": 12,
       "quality_score": 4,
       "score_breakdown": {
-        "pr_score": 17,
+        "pr_score": 18,
         "commits_score": 16,
         "pr_reviews_score": 0,
         "code_comments_score": 0,
@@ -285,7 +285,7 @@
         "issue_comments": 0,
         "issue_comments_total": 0
       },
-      "lastActiveDays": 10
+      "lastActiveDays": 4
     },
     {
       "rank": 7,
@@ -379,7 +379,7 @@
         "issue_comments": 7,
         "issue_comments_total": 7
       },
-      "lastActiveDays": null
+      "lastActiveDays": 2
     },
     {
       "rank": 9,
@@ -567,7 +567,7 @@
         "issue_comments": 0,
         "issue_comments_total": 0
       },
-      "lastActiveDays": 26
+      "lastActiveDays": 11
     },
     {
       "rank": 13,

@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React from "react";
 import {
   X,
   ExternalLink,
@@ -13,55 +13,25 @@ import {
   Layers,
 } from "lucide-react";
 import { ContributorModalProps } from "@/types";
-import { SCORE_BARS } from "@/constants";
-import { getRankBadge } from "@/app/utils";
+import { MODAL_SECTION_TITLES, SCORE_BARS } from "@/constants";
+import { useContributorModal } from "@/hooks";
+import Image from "next/image";
 
-const ContributorModal: React.FC<ContributorModalProps> = ({
+// Inner component — only rendered when contributor is guaranteed non-null
+function ContributorModalInner({
   contributor,
   onClose,
-}) => {
-  useEffect(() => {
-    const handleEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", handleEsc);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", handleEsc);
-      document.body.style.overflow = "";
-    };
-  }, [onClose]);
-
-  if (!contributor) return null;
-
-  const { score_breakdown, prs_by_complexity } = contributor;
-  const totalPRs = contributor.totalPRs || 1;
-  const smallPct = Math.round((prs_by_complexity.small / totalPRs) * 100);
-  const mediumPct = Math.round((prs_by_complexity.medium / totalPRs) * 100);
-  const largePct = Math.round((prs_by_complexity.large / totalPRs) * 100);
-
-  const scoreItems = [
-    { label: "PR Score", value: score_breakdown.pr_score },
-    { label: "Commits Score", value: score_breakdown.commits_score },
-    { label: "PR Reviews", value: score_breakdown.pr_reviews_score },
-    { label: "Code Comments", value: score_breakdown.code_comments_score },
-    { label: "Issues Opened", value: score_breakdown.issues_opened_score },
-    { label: "Issue Comments", value: score_breakdown.issue_comments_score },
-    { label: "Tests", value: score_breakdown.tests_score },
-    { label: "Docs", value: score_breakdown.docs_score },
-    { label: "Mentor", value: score_breakdown.mentor_score },
-    { label: "Zero Revisions", value: score_breakdown.zero_revisions_score },
-    { label: "Impact Bonus", value: score_breakdown.impact_bonus_score },
-    {
-      label: "Multi-Project Bonus",
-      value: score_breakdown.projects_score ?? 0,
-    },
-  ];
-
-  const maxScore = Math.max(...scoreItems.map((s) => s.value), 1);
-
-  const badge = getRankBadge(contributor.rank);
-  const projectsWorkedOn = contributor.projectsWorkingOn ?? 0;
+}: Required<ContributorModalProps>) {
+  const {
+    prs_by_complexity,
+    smallPct,
+    mediumPct,
+    largePct,
+    scoreItems,
+    maxScore,
+    badge,
+    projectsWorkedOn,
+  } = useContributorModal(contributor, onClose);
 
   return (
     <div className='fixed inset-0 z-50 flex items-center justify-center p-4'>
@@ -72,22 +42,26 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
 
       <div className='relative bg-white rounded-2xl shadow-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto z-10'>
         {/* Header */}
-        <div className='sticky top-0 bg-white z-10 px-6 pt-6 pb-4 border-b border-gray-100'>
+        <div className='sticky top-0 bg-white z-10 px-6 pt-6 pb-4 border-b border-mf-border'>
           <button
             onClick={onClose}
-            className='absolute top-4 right-4 text-gray-400 hover:text-gray-600 transition-colors p-1 rounded-full hover:bg-gray-100'
+            className='absolute top-4 right-4 text-mf-light-grey hover:text-mf-dark transition-colors p-1 rounded-full hover:bg-mf-bg-subtle'
           >
             <X className='w-5 h-5' />
           </button>
 
           <div className='flex items-center gap-4'>
             <div className='relative flex-shrink-0'>
-              <div className='p-0.5 rounded-full bg-gradient-to-tr from-mindfire-text-red via-orange-500 to-yellow-500'>
+              {/* Avatar ring — bg-mf-gradient-tr replaces inline gradient */}
+              <div className='p-0.5 rounded-full bg-mf-gradient-tr'>
                 <div className='p-0.5 rounded-full bg-white'>
-                  <img
+                  <Image
                     src={contributor.avatar_url}
                     alt={contributor.username}
                     className='w-16 h-16 rounded-full object-cover'
+                    loading='lazy'
+                    height={20}
+                    width={20}
                   />
                 </div>
               </div>
@@ -102,7 +76,7 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
 
             <div>
               <div className='flex items-center gap-2 flex-wrap'>
-                <h2 className='text-xl font-bold text-gray-900'>
+                <h2 className='text-xl font-bold text-mf-dark'>
                   {contributor.username}
                 </h2>
                 <span
@@ -115,7 +89,7 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
                 href={contributor.html_url}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='inline-flex items-center gap-1.5 mt-1.5 text-sm font-medium text-gray-500 hover:text-mf-red transition-colors group'
+                className='inline-flex items-center gap-1.5 mt-1.5 text-sm font-medium text-mf-light-grey hover:text-mf-red transition-colors group'
               >
                 <Github className='w-4 h-4 group-hover:scale-110 transition-transform' />
                 <span>View GitHub Profile</span>
@@ -126,12 +100,13 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
         </div>
 
         <div className='p-6 space-y-6'>
+          {/* Score tiles — total score tile uses brand red tokens */}
           <div className='grid grid-cols-2 sm:grid-cols-4 gap-3'>
             {[
               {
                 label: "Total Score",
                 value: contributor.total_score,
-                color: "bg-red-50 border-red-200 text-mindfire-text-red",
+                color: "bg-mf-red-subtle border-mf-red-border text-mf-red",
               },
               {
                 label: "Code Score",
@@ -161,9 +136,10 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
             ))}
           </div>
 
+          {/* Score composition bars */}
           <div>
-            <h3 className='text-sm font-semibold text-gray-700 mb-3'>
-              Score Composition
+            <h3 className='text-sm font-semibold text-mf-dark mb-3'>
+              {MODAL_SECTION_TITLES.scoreComposition}
             </h3>
             <div className='space-y-2.5'>
               {SCORE_BARS.map((bar) => {
@@ -189,10 +165,10 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
                         style={{ width: `${pct}%` }}
                       />
                     </div>
-                    <span className='text-xs font-bold text-gray-700 w-10 text-right tabular-nums'>
+                    <span className='text-xs font-bold text-mf-dark w-10 text-right tabular-nums'>
                       {contributor[bar.key]}
                     </span>
-                    <span className='text-[10px] text-gray-400 w-8 text-right tabular-nums'>
+                    <span className='text-[10px] text-mf-light-grey w-8 text-right tabular-nums'>
                       {Math.round(pct)}%
                     </span>
                   </div>
@@ -201,9 +177,10 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
             </div>
           </div>
 
+          {/* Activity stats */}
           <div>
-            <h3 className='text-sm font-semibold text-gray-700 mb-3'>
-              Activity
+            <h3 className='text-sm font-semibold text-mf-dark mb-3'>
+              {MODAL_SECTION_TITLES.activity}
             </h3>
             <div className='grid grid-cols-2 sm:grid-cols-3 gap-3'>
               {[
@@ -237,7 +214,6 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
                   label: "Avg Commits/PR",
                   value: contributor.avgCommitsPerPR.toFixed(1),
                 },
-                // ── NEW: projects stat tile ──
                 {
                   icon: <Layers className='w-4 h-4' />,
                   label: "Projects",
@@ -246,23 +222,26 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
               ].map((stat) => (
                 <div
                   key={stat.label}
-                  className='flex items-center gap-2.5 bg-gray-50 rounded-lg px-3 py-2.5 border border-gray-100'
+                  className='flex items-center gap-2.5 bg-mf-bg-subtle rounded-lg px-3 py-2.5 border border-mf-border'
                 >
-                  <span className='text-gray-400'>{stat.icon}</span>
+                  <span className='text-mf-light-grey'>{stat.icon}</span>
                   <div>
-                    <p className='text-sm font-semibold text-gray-800'>
+                    <p className='text-sm font-semibold text-mf-dark'>
                       {stat.value}
                     </p>
-                    <p className='text-[10px] text-gray-500'>{stat.label}</p>
+                    <p className='text-[10px] text-mf-light-grey'>
+                      {stat.label}
+                    </p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
+          {/* PR complexity */}
           <div>
-            <h3 className='text-sm font-semibold text-gray-700 mb-3'>
-              PR Complexity Breakdown
+            <h3 className='text-sm font-semibold text-mf-dark mb-3'>
+              {MODAL_SECTION_TITLES.prComplexity}
             </h3>
             <div className='grid grid-cols-3 gap-3'>
               {[
@@ -284,36 +263,37 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
                   label: "Large",
                   value: prs_by_complexity.large,
                   pct: largePct,
-                  color: "bg-red-500",
+                  color: "bg-mf-red",
                   multiplier: "×1.7",
                 },
               ].map((item) => (
                 <div
                   key={item.label}
-                  className='bg-gray-50 rounded-lg p-3 border border-gray-100 text-center'
+                  className='bg-mf-bg-subtle rounded-lg p-3 border border-mf-border text-center'
                 >
-                  <p className='text-lg font-bold text-gray-800'>
-                    {item.value}
-                  </p>
-                  <p className='text-xs text-gray-500'>{item.label}</p>
-                  <p className='text-[10px] text-gray-400 font-mono font-semibold mb-2'>
+                  <p className='text-lg font-bold text-mf-dark'>{item.value}</p>
+                  <p className='text-xs text-mf-light-grey'>{item.label}</p>
+                  <p className='text-[10px] text-mf-light-grey font-mono font-semibold mb-2'>
                     {item.multiplier}
                   </p>
-                  <div className='w-full bg-gray-200 rounded-full h-1.5'>
+                  <div className='w-full bg-mf-border rounded-full h-1.5'>
                     <div
                       className={`${item.color} h-1.5 rounded-full transition-all duration-500`}
                       style={{ width: `${item.pct}%` }}
                     />
                   </div>
-                  <p className='text-[10px] text-gray-400 mt-1'>{item.pct}%</p>
+                  <p className='text-[10px] text-mf-light-grey mt-1'>
+                    {item.pct}%
+                  </p>
                 </div>
               ))}
             </div>
           </div>
 
+          {/* Score breakdown bars — brand gradient replaces from-mindfire-text-red */}
           <div>
-            <h3 className='text-sm font-semibold text-gray-700 mb-3'>
-              Score Breakdown
+            <h3 className='text-sm font-semibold text-mf-dark mb-3'>
+              {MODAL_SECTION_TITLES.scoreBreakdown}
             </h3>
             <div className='space-y-2'>
               {scoreItems
@@ -321,16 +301,16 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
                 .sort((a, b) => b.value - a.value)
                 .map((item) => (
                   <div key={item.label} className='flex items-center gap-3'>
-                    <span className='text-xs text-gray-600 w-36 flex-shrink-0 text-right'>
+                    <span className='text-xs text-mf-light-grey w-36 flex-shrink-0 text-right'>
                       {item.label}
                     </span>
-                    <div className='flex-1 bg-gray-100 rounded-full h-2'>
+                    <div className='flex-1 bg-mf-border rounded-full h-2'>
                       <div
-                        className={`h-2 rounded-full transition-all duration-500 bg-gradient-to-r from-mindfire-text-red to-orange-400`}
+                        className='h-2 rounded-full transition-all duration-500 bg-mf-gradient'
                         style={{ width: `${(item.value / maxScore) * 100}%` }}
                       />
                     </div>
-                    <span className='text-xs font-semibold text-gray-700 w-12 text-right'>
+                    <span className='text-xs font-semibold text-mf-dark w-12 text-right'>
                       {item.value}
                     </span>
                   </div>
@@ -338,9 +318,10 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
             </div>
           </div>
 
+          {/* Projects */}
           {contributor.projects && contributor.projects.length > 0 && (
             <div>
-              <h3 className='text-sm font-semibold text-gray-700 mb-3'>
+              <h3 className='text-sm font-semibold text-mf-dark mb-3'>
                 Projects ({contributor.projectsWorkingOn})
               </h3>
               <div className='flex flex-wrap gap-2'>
@@ -359,6 +340,15 @@ const ContributorModal: React.FC<ContributorModalProps> = ({
       </div>
     </div>
   );
+}
+
+// Outer wrapper — handles the null guard before rendering the inner component
+const ContributorModal: React.FC<ContributorModalProps> = ({
+  contributor,
+  onClose,
+}) => {
+  if (!contributor) return null;
+  return <ContributorModalInner contributor={contributor} onClose={onClose} />;
 };
 
 export default ContributorModal;

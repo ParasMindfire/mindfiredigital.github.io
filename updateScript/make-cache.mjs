@@ -1,6 +1,7 @@
 import https from "https";
 import fs from "fs";
 import path from "path";
+import logger from "../src/app/utils/logger.mjs";
 
 /* CONFIGURATION */
 
@@ -8,14 +9,13 @@ const CONFIG = {
   GITHUB_TOKEN: process.env.GITHUB_TOKEN || "",
   OWNER: "mindfiredigital",
 
-  CONTRIBUTORS_FILE: "./src/app/projects/assets/contributors.json",
-  PROJECTS_FILE: "./src/app/projects/assets/projects.json",
-  CONTRIBUTOR_MAPPING_FILE:
-    "./src/app/projects/assets/contributor-mapping.json",
-  CACHE_FILE: "./src/app/projects/assets/leaderboard-cache.json",
-  UPCOMING_PROJECTS_FILE: "./src/app/projects/assets/upcomingProjects.json",
+  CONTRIBUTORS_FILE: "./src/asset/contributors.json",
+  PROJECTS_FILE: "./src/asset/projects.json",
+  CONTRIBUTOR_MAPPING_FILE: "./src/asset/contributor-mapping.json",
+  CACHE_FILE: "./src/asset/leaderboard-cache.json",
+  UPCOMING_PROJECTS_FILE: "./src/asset/upcomingProjects.json",
 
-  PROGRESS_FILE: "./src/app/projects/assets/leaderboard-progress.json",
+  PROGRESS_FILE: "./src/asset/leaderboard-progress.json",
 
   SPECIAL_PROJECTS: [
     {
@@ -99,29 +99,27 @@ async function fetchWithRetry(url, maxRetries = 5, initialDelay = 2000) {
         let waitTime;
 
         if (error.retryAfterMs && error.retryAfterMs > 0) {
-          // GitHub told us exactly how long — trust it + 1s buffer
           waitTime = error.retryAfterMs + 1000;
-          console.warn(
-            `⏳ Rate limited (header). Waiting ${Math.round(
+          logger.warn(
+            `Rate limited (header). Waiting ${Math.round(
               waitTime / 1000
-            )}s` + ` (retry ${attempt + 1}/${maxRetries - 1}) — ${url}`
+            )}s (retry ${attempt + 1}/${maxRetries - 1}) — ${url}`
           );
         } else if (error.resetAtMs && error.resetAtMs > Date.now()) {
-          // X-RateLimit-Reset: unix timestamp when quota refills
           waitTime = error.resetAtMs - Date.now() + 1500;
-          console.warn(
-            `⏳ Rate limited (reset). Waiting ${Math.round(waitTime / 1000)}s` +
-              ` (retry ${attempt + 1}/${maxRetries - 1}) — ${url}`
+          logger.warn(
+            `Rate limited (reset). Waiting ${Math.round(
+              waitTime / 1000
+            )}s (retry ${attempt + 1}/${maxRetries - 1}) — ${url}`
           );
         } else {
-          // Fallback: exponential backoff with jitter
           const baseWait = initialDelay * Math.pow(2, attempt);
           const jitter = Math.random() * 1000;
           waitTime = baseWait + jitter;
-          console.warn(
-            `⏳ Rate limited (backoff). Waiting ${Math.round(
+          logger.warn(
+            `Rate limited (backoff). Waiting ${Math.round(
               waitTime / 1000
-            )}s` + ` (retry ${attempt + 1}/${maxRetries - 1}) — ${url}`
+            )}s (retry ${attempt + 1}/${maxRetries - 1}) — ${url}`
           );
         }
 
@@ -130,7 +128,7 @@ async function fetchWithRetry(url, maxRetries = 5, initialDelay = 2000) {
       }
 
       if (attempt === maxRetries - 1) {
-        console.error(`❌ Failed after ${maxRetries} attempts: ${url}`);
+        logger.error(`Failed after ${maxRetries} attempts: ${url}`);
       }
       throw error;
     }
@@ -165,7 +163,6 @@ async function rawFetchGitHub(url) {
             );
             err.status = res.statusCode;
 
-            // Attach parsed header values so fetchWithRetry can use them
             const retryAfterRaw = res.headers["retry-after"];
             const rateLimitReset = res.headers["x-ratelimit-reset"];
 
@@ -198,12 +195,12 @@ function readJsonFile(filePath) {
   try {
     const fullPath = path.resolve(filePath);
     if (!fs.existsSync(fullPath)) {
-      console.warn(`⚠️  File not found: ${filePath}`);
+      logger.warn(`File not found: ${filePath}`);
       return null;
     }
     return JSON.parse(fs.readFileSync(fullPath, "utf8"));
   } catch (error) {
-    console.error(`❌ Error reading ${filePath}:`, error.message);
+    logger.error(`Error reading ${filePath}: ${error.message}`);
     return null;
   }
 }
@@ -215,7 +212,7 @@ function writeJsonFile(filePath, data) {
     fs.writeFileSync(filePath, JSON.stringify(data, null, 2), "utf8");
     return true;
   } catch (error) {
-    console.error(`❌ Error writing to ${filePath}:`, error.message);
+    logger.error(`Error writing to ${filePath}: ${error.message}`);
     return false;
   }
 }
@@ -227,13 +224,10 @@ function loadProgress() {
     const saved = JSON.parse(fs.readFileSync(fullPath, "utf8"));
     const count = Object.keys(saved.completed || {}).length;
     if (count > 0) {
-      console.log(
-        `♻️  Resuming — ${count} project(s) already cached, skipping:`
-      );
+      logger.info(`Resuming — ${count} project(s) already cached, skipping:`);
       Object.keys(saved.completed).forEach((id) =>
-        console.log(`   ✓ ${saved.completed[id].title} (${id})`)
+        logger.info(`   ✓ ${saved.completed[id].title} (${id})`)
       );
-      console.log();
     }
     return saved;
   } catch {
@@ -266,7 +260,7 @@ async function fetchDefaultBranch(owner, repo) {
     );
     return repoData.default_branch;
   } catch (error) {
-    console.error(`   ⚠️ Error fetching default branch: ${error.message}`);
+    logger.error(`Error fetching default branch: ${error.message}`);
     return "main";
   }
 }
@@ -274,8 +268,8 @@ async function fetchDefaultBranch(owner, repo) {
 /* FETCH ALL COMMITS FROM DEFAULT BRANCH ONLY */
 
 async function fetchAllCommitsFromDefaultBranch(owner, repo, defaultBranch) {
-  console.log(
-    `   🔍 Fetching ALL commits on ${defaultBranch} (default branch only)...`
+  logger.info(
+    `Fetching ALL commits on ${defaultBranch} (default branch only)...`
   );
   let page = 1;
   const allCommits = [];
@@ -296,15 +290,13 @@ async function fetchAllCommitsFromDefaultBranch(owner, repo, defaultBranch) {
       if (commits.length < 100) break;
       page++;
     } catch (error) {
-      console.error(
-        `      ⚠️ Error fetching commits page ${page}: ${error.message}`
-      );
+      logger.error(`Error fetching commits page ${page}: ${error.message}`);
       break;
     }
   }
 
-  console.log(
-    `   ✅ Found ${allCommits.length} commits on ${defaultBranch} (${apiCalls} API calls)`
+  logger.info(
+    `Found ${allCommits.length} commits on ${defaultBranch} (${apiCalls} API calls)`
   );
   return allCommits;
 }
@@ -332,11 +324,11 @@ async function fetchAllMergedPRsToDefault(
   defaultBranch,
   defaultBranchSHAs
 ) {
-  console.log(
-    `   🔍 Fetching merged PRs whose merge_commit_sha is on ${defaultBranch}...`
+  logger.info(
+    `Fetching merged PRs whose merge_commit_sha is on ${defaultBranch}...`
   );
-  console.log(
-    `   📊 Default branch has ${defaultBranchSHAs.size} commit SHAs to check against`
+  logger.info(
+    `Default branch has ${defaultBranchSHAs.size} commit SHAs to check against`
   );
 
   let page = 1;
@@ -361,17 +353,15 @@ async function fetchAllMergedPRsToDefault(
       if (prs.length < 100) break;
       page++;
     } catch (error) {
-      console.error(
-        `      ⚠️ Error fetching PRs page ${page}: ${error.message}`
-      );
+      logger.error(`Error fetching PRs page ${page}: ${error.message}`);
       break;
     }
   }
 
-  console.log(
-    `   📊 ${candidatePRs.length} PRs confirmed merged into ${defaultBranch} (${apiCalls} API calls)`
+  logger.info(
+    `${candidatePRs.length} PRs confirmed merged into ${defaultBranch} (${apiCalls} API calls)`
   );
-  console.log(`   🔍 Enriching PRs with complexity + reviews...`);
+  logger.info(`Enriching PRs with complexity + reviews...`);
 
   const enrichedPRs = [];
 
@@ -391,7 +381,7 @@ async function fetchAllMergedPRsToDefault(
           `https://api.github.com/repos/${owner}/${repo}/pulls/${pr.number}/reviews`
         );
       } catch (err) {
-        console.error(`      ⚠️ Error fetching reviews for PR #${pr.number}`);
+        logger.error(`Error fetching reviews for PR #${pr.number}`);
       }
 
       let reviewComments = [];
@@ -400,9 +390,7 @@ async function fetchAllMergedPRsToDefault(
           `https://api.github.com/repos/${owner}/${repo}/pulls/${pr.number}/comments`
         );
       } catch (err) {
-        console.error(
-          `      ⚠️ Error fetching review comments for PR #${pr.number}`
-        );
+        logger.error(`Error fetching review comments for PR #${pr.number}`);
       }
 
       const humanReviews = (reviews || []).filter((r) => !isBot(r.user?.login));
@@ -437,18 +425,16 @@ async function fetchAllMergedPRsToDefault(
       });
 
       if ((i + 1) % 10 === 0) {
-        console.log(
-          `   Progress: ${i + 1}/${candidatePRs.length} PRs enriched...`
+        logger.info(
+          `Progress: ${i + 1}/${candidatePRs.length} PRs enriched...`
         );
       }
     } catch (error) {
-      console.error(
-        `      ⚠️ Error enriching PR #${pr.number}: ${error.message}`
-      );
+      logger.error(`Error enriching PR #${pr.number}: ${error.message}`);
     }
   }
 
-  console.log(`   ✅ ${enrichedPRs.length} PRs fully enriched`);
+  logger.info(`${enrichedPRs.length} PRs fully enriched`);
   return enrichedPRs;
 }
 
@@ -476,8 +462,8 @@ async function fetchIssueCommentAuthors(owner, repo, issueNumber) {
       if (comments.length < 100) break;
       page++;
     } catch (err) {
-      console.error(
-        `      ⚠️ Error fetching comments for issue #${issueNumber}: ${err.message}`
+      logger.error(
+        `Error fetching comments for issue #${issueNumber}: ${err.message}`
       );
       break;
     }
@@ -487,7 +473,7 @@ async function fetchIssueCommentAuthors(owner, repo, issueNumber) {
 }
 
 async function fetchCategorizedIssues(owner, repo) {
-  console.log(`   🔍 Fetching categorized issues...`);
+  logger.info(`Fetching categorized issues...`);
   let page = 1;
   const issues = { bugs: [], enhancements: [], documentation: [], others: [] };
   const allRawIssues = [];
@@ -507,13 +493,13 @@ async function fetchCategorizedIssues(owner, repo) {
       if (allIssues.length < 100) break;
       page++;
     } catch (error) {
-      console.error(`      ⚠️ Error fetching issues: ${error.message}`);
+      logger.error(`Error fetching issues: ${error.message}`);
       break;
     }
   }
 
-  console.log(
-    `   🔍 Fetching real comment authors for ${allRawIssues.length} issues...`
+  logger.info(
+    `Fetching real comment authors for ${allRawIssues.length} issues...`
   );
 
   for (let i = 0; i < allRawIssues.length; i++) {
@@ -560,14 +546,14 @@ async function fetchCategorizedIssues(owner, repo) {
     }
 
     if ((i + 1) % 20 === 0) {
-      console.log(
-        `   Progress: ${i + 1}/${allRawIssues.length} issues processed...`
+      logger.info(
+        `Progress: ${i + 1}/${allRawIssues.length} issues processed...`
       );
     }
   }
 
-  console.log(
-    `   ✅ Found ${issues.bugs.length} bugs, ${issues.enhancements.length} enhancements, ${issues.documentation.length} docs, ${issues.others.length} others`
+  logger.info(
+    `Found ${issues.bugs.length} bugs, ${issues.enhancements.length} enhancements, ${issues.documentation.length} docs, ${issues.others.length} others`
   );
   return issues;
 }
@@ -575,11 +561,11 @@ async function fetchCategorizedIssues(owner, repo) {
 /* PROCESS SINGLE PROJECT */
 
 async function processProject(projectId, projectTitle, repoName) {
-  console.log(`\n📊 Processing: ${projectTitle} (${repoName})`);
+  logger.info(`Processing: ${projectTitle} (${repoName})`);
 
   try {
     const defaultBranch = await fetchDefaultBranch(CONFIG.OWNER, repoName);
-    console.log(`   🌿 Default branch: ${defaultBranch}`);
+    logger.info(`Default branch: ${defaultBranch}`);
 
     const commits = await fetchAllCommitsFromDefaultBranch(
       CONFIG.OWNER,
@@ -638,7 +624,7 @@ async function processProject(projectId, projectTitle, repoName) {
       },
     };
   } catch (error) {
-    console.error(`   ❌ Error processing ${projectTitle}: ${error.message}`);
+    logger.error(`Error processing ${projectTitle}: ${error.message}`);
     return null;
   }
 }
@@ -646,18 +632,18 @@ async function processProject(projectId, projectTitle, repoName) {
 /* MAIN */
 
 async function cacheLeaderboardData() {
-  console.log("\n" + "=".repeat(80));
-  console.log("🏆 LEADERBOARD DATA FETCHER");
-  console.log("=".repeat(80));
-  console.log(`  📝 Commits  = only commits on the default branch`);
-  console.log(
-    `  🔀 PRs      = only merged PRs whose merge_commit_sha is on default branch`
+  logger.info("=".repeat(80));
+  logger.info("LEADERBOARD DATA FETCHER");
+  logger.info("=".repeat(80));
+  logger.info("Commits  = only commits on the default branch");
+  logger.info(
+    "PRs      = only merged PRs whose merge_commit_sha is on default branch"
   );
-  console.log(`  🎯 Complexity: small / medium / large`);
-  console.log(`  👀 PR reviews + review comments`);
-  console.log(`  🐛 Issues categorized (bugs / enhancements / docs / others)`);
-  console.log(`  💬 Issue comments — real authors fetched per issue`);
-  console.log(`  ⚙️  Queue: concurrency=1, 500ms delay`);
+  logger.info("Complexity: small / medium / large");
+  logger.info("PR reviews + review comments");
+  logger.info("Issues categorized (bugs / enhancements / docs / others)");
+  logger.info("Issue comments — real authors fetched per issue");
+  logger.info("Queue: concurrency=1, 500ms delay");
 
   const contributors = readJsonFile(CONFIG.CONTRIBUTORS_FILE) || [];
   const projects = readJsonFile(CONFIG.PROJECTS_FILE) || [];
@@ -665,14 +651,14 @@ async function cacheLeaderboardData() {
   const allProjects = [...projects, ...upcomingProjects];
 
   if (!contributors.length) {
-    console.error("❌ No contributors found!");
+    logger.error("No contributors found!");
     return;
   }
 
-  console.log(
-    `📦 Loaded ${contributors.length} contributors, ${projects.length} projects`
+  logger.info(
+    `Loaded ${contributors.length} contributors, ${projects.length} projects`
   );
-  console.log(`   Special projects: ${CONFIG.SPECIAL_PROJECTS.length}\n`);
+  logger.info(`Special projects: ${CONFIG.SPECIAL_PROJECTS.length}`);
 
   const progress = loadProgress();
   const allProjectsData = { ...progress.partialCache };
@@ -691,19 +677,19 @@ async function cacheLeaderboardData() {
     ).match(/github\.com\/[^\/]+\/([^\/]+)/);
 
     if (!repoMatch) {
-      console.log(`\n[${processedCount}/${totalProjects}] 📌 ${project.title}`);
-      console.log(`   ⚠️ Skipping — no valid GitHub URL`);
+      logger.info(`[${processedCount}/${totalProjects}] ${project.title}`);
+      logger.warn(`Skipping — no valid GitHub URL`);
       continue;
     }
 
     if (progress.completed[project.id]) {
-      console.log(
-        `\n[${processedCount}/${totalProjects}] ⏭️  ${project.title} — already cached, skipping`
+      logger.info(
+        `[${processedCount}/${totalProjects}] ${project.title} — already cached, skipping`
       );
       continue;
     }
 
-    console.log(`\n[${processedCount}/${totalProjects}] 📌 ${project.title}`);
+    logger.info(`[${processedCount}/${totalProjects}] ${project.title}`);
 
     const projectData = await processProject(
       project.id,
@@ -714,7 +700,7 @@ async function cacheLeaderboardData() {
     if (projectData) {
       allProjectsData[project.id] = projectData;
       saveProgress(project.id, project.title, projectData, progress);
-      console.log(`   💾 Progress saved (${project.title})`);
+      logger.info(`Progress saved (${project.title})`);
     }
   }
 
@@ -722,24 +708,24 @@ async function cacheLeaderboardData() {
     processedCount++;
 
     if (progress.completed[sp.id]) {
-      console.log(
-        `\n[${processedCount}/${totalProjects}] ⏭️  ${sp.title} — already cached, skipping`
+      logger.info(
+        `[${processedCount}/${totalProjects}] ${sp.title} — already cached, skipping`
       );
       continue;
     }
 
-    console.log(`\n[${processedCount}/${totalProjects}] 🌟 ${sp.title}`);
+    logger.info(`[${processedCount}/${totalProjects}] ${sp.title}`);
 
     const projectData = await processProject(sp.id, sp.title, sp.repoName);
     if (projectData) {
       allProjectsData[sp.id] = projectData;
       saveProgress(sp.id, sp.title, projectData, progress);
-      console.log(`   💾 Progress saved (${sp.title})`);
+      logger.info(`Progress saved (${sp.title})`);
     }
   }
 
-  console.log("\n" + "=".repeat(80));
-  console.log("💾 Saving final cache...");
+  logger.info("=".repeat(80));
+  logger.info("Saving final cache...");
 
   const success = writeJsonFile(CONFIG.CACHE_FILE, allProjectsData);
 
@@ -752,24 +738,22 @@ async function cacheLeaderboardData() {
       (s, p) => s + (p.stats?.total_merged_prs || 0),
       0
     );
-    console.log(
-      `✅ Cached ${Object.keys(allProjectsData).length} projects total`
-    );
-    console.log(`   ⏭️  Skipped (already cached): ${skippedCount}`);
-    console.log(
-      `   🆕 Newly fetched this run:   ${
+    logger.info(`Cached ${Object.keys(allProjectsData).length} projects total`);
+    logger.info(`Skipped (already cached): ${skippedCount}`);
+    logger.info(
+      `Newly fetched this run: ${
         Object.keys(allProjectsData).length - skippedCount
       }`
     );
-    console.log(`   Total commits (default branch): ${totalCommits}`);
-    console.log(`   Total merged PRs (default branch): ${totalPRs}`);
-    console.log(`📁 → ${CONFIG.CACHE_FILE}`);
+    logger.info(`Total commits (default branch): ${totalCommits}`);
+    logger.info(`Total merged PRs (default branch): ${totalPRs}`);
+    logger.info(`Output: ${CONFIG.CACHE_FILE}`);
 
     clearProgress();
-    console.log(`🧹 Progress checkpoint cleared`);
+    logger.info(`Progress checkpoint cleared`);
   }
 
-  console.log("=".repeat(80) + "\n");
+  logger.info("=".repeat(80));
   return allProjectsData;
 }
 
@@ -777,9 +761,9 @@ const startTime = Date.now();
 cacheLeaderboardData()
   .then(() => {
     const s = Math.round((Date.now() - startTime) / 1000);
-    console.log(`✅ Completed in ${Math.floor(s / 60)}m ${s % 60}s`);
+    logger.info(`Completed in ${Math.floor(s / 60)}m ${s % 60}s`);
   })
   .catch((error) => {
-    console.error("\n❌ Fatal error:", error);
+    logger.error(`Fatal error: ${error}`);
     process.exit(1);
   });

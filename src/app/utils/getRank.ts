@@ -1,3 +1,5 @@
+/* Returns styling configuration based on contributor rank (1st, 2nd, 3rd, or others).  
+Used to visually highlight top contributors with special colors, badges, and gradients */
 export const getRankStyles = (rank: number) => {
   if (rank === 1)
     return {
@@ -36,6 +38,7 @@ export const getRankStyles = (rank: number) => {
   };
 };
 
+/* Returns badge label and color styling for displaying contributor rank */
 export const getRankBadge = (rank: number) => {
   if (rank === 1)
     return {
@@ -58,6 +61,7 @@ export const getRankBadge = (rank: number) => {
   };
 };
 
+/* Useful when embedding remote images directly in HTML or canvas */
 export async function toBase64Url(url: string): Promise<string> {
   const res = await fetch(url);
   const blob = await res.blob();
@@ -69,16 +73,52 @@ export async function toBase64Url(url: string): Promise<string> {
   });
 }
 
+/* Formats a month key (YYYY-MM) into a readable string like "March 2026" */
 export function formatMonthKey(key: string): string {
   const [year, month] = key.split("-");
   const date = new Date(Number(year), Number(month) - 1, 1);
   return date.toLocaleString("default", { month: "long", year: "numeric" });
 }
 
+/* Returns the current month in "YYYY-MM" format using UTC time */
 export function currentMonthKey(): string {
   const now = new Date();
   return `${now.getUTCFullYear()}-${String(now.getUTCMonth() + 1).padStart(
     2,
     "0"
   )}`;
+}
+
+/* Returns the three YYYY-MM keys for a quarter key like "2026-Q1" */
+export function quarterMonths(quarterKey: string): string[] {
+  const [year, q] = quarterKey.split("-");
+  const qNum = Number(q.replace("Q", ""));
+  const startMonth = (qNum - 1) * 3 + 1;
+  return [0, 1, 2].map(
+    (i) => `${year}-${String(startMonth + i).padStart(2, "0")}`
+  );
+}
+
+/* Formats a quarter key (e.g. "2026-Q1") into a readable label like "Q1 2026" */
+export function formatQuarterKey(quarterKey: string): string {
+  const [year, q] = quarterKey.split("-");
+  return `${q} ${year}`;
+}
+
+/* Returns the current quarter in "YYYY-Qn" format using UTC time */
+export function currentQuarterKey(): string {
+  const now = new Date();
+  const q = Math.ceil((now.getUTCMonth() + 1) / 3);
+  return `${now.getUTCFullYear()}-Q${q}`;
+}
+
+/* Derives the set of available quarter keys from a list of available month keys */
+export function availableQuartersFromMonths(months: string[]): string[] {
+  const quarters = new Set<string>();
+  for (const month of months) {
+    const [year, m] = month.split("-");
+    const q = Math.ceil(Number(m) / 3);
+    quarters.add(`${year}-Q${q}`);
+  }
+  return Array.from(quarters).sort();
 }

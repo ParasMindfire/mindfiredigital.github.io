@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-10T05:56:24.460Z",
+  "generated_at": "2026-05-08T11:58:56.155Z",
   "period": "monthly",
   "month_label": "October 2023",
   "month_key": "2023-10",
@@ -26,12 +26,12 @@
         "medium": 0,
         "large": 3
       },
-      "total_score": 144,
-      "code_score": 120,
+      "total_score": 145,
+      "code_score": 121,
       "community_score": 12,
       "quality_score": 12,
       "score_breakdown": {
-        "pr_score": 36,
+        "pr_score": 37,
         "commits_score": 84,
         "pr_reviews_score": 0,
         "code_comments_score": 0,
@@ -50,7 +50,7 @@
         "issue_comments": 0,
         "issue_comments_total": 0
       },
-      "lastActiveDays": 4
+      "lastActiveDays": 2
     },
     {
       "rank": 2,
@@ -73,12 +73,12 @@
         "medium": 0,
         "large": 3
       },
-      "total_score": 80,
-      "code_score": 68,
+      "total_score": 81,
+      "code_score": 69,
       "community_score": 10,
       "quality_score": 2,
       "score_breakdown": {
-        "pr_score": 36,
+        "pr_score": 37,
         "commits_score": 32,
         "pr_reviews_score": 0,
         "code_comments_score": 0,
@@ -144,7 +144,7 @@
         "issue_comments": 0,
         "issue_comments_total": 0
       },
-      "lastActiveDays": 26
+      "lastActiveDays": 11
     },
     {
       "rank": 4,

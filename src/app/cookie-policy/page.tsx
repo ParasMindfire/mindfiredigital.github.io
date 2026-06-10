@@ -1,18 +1,18 @@
-import { cookieData } from "@/constants";
-import React from "react";
+import { cookieData, COOKIE_POLICY_INTRO } from "@/constants";
 
 export default function CookiePolicyPage() {
   return (
     <div className='max-w-4xl mx-auto my-10 px-6'>
+      {/* Introductory paragraph explaining what cookies are and how we use them */}
       <p className='tracking-wider text-mindfire-content-p-text-color'>
-        Cookies are small pieces of text that are used to store information on
-        web browsers. They help in storing and receiving identifiers and other
-        data on computers, smartphones, and other devices. In this policy, we
-        collectively refer to all such technologies as &quot;cookies.&quot; We
-        utilize cookies to enhance your experience on our open source websites,
-        including all associated content, documentation,
-        information,collectively known as the &quot;Website.&quot;
+        {COOKIE_POLICY_INTRO}
       </p>
+
+      {/*
+       * Cookie sections
+       * Each item from cookieData renders as a titled section
+       * with a short description of that cookie category.
+       */}
       <div className='flex flex-col gap-10 my-10'>
         {cookieData.map(({ title, description }, index) => {
           return (

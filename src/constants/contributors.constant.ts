@@ -3,6 +3,8 @@ import { TabId } from "@/types";
 export const TABS: { id: TabId; label: string }[] = [
   { id: "alltime", label: "All Time" },
   { id: "monthly", label: "Month" },
+  { id: "quarterly", label: "Quarter" },
+  { id: "custom", label: "Custom" },
 ];
 
 export const RANK_ROW_ACCENT = [
@@ -59,3 +61,23 @@ export const SCORE_BARS = [
 
 export const INTERVAL_MS = 4000;
 export const PAUSE_ON_CLICK_MS = 8000;
+
+export const CONTRIBUTORS_FILTERS_DEFAULT = {
+  sortBy: "total_score",
+  activityFilter: "all",
+  scoreRange: "all",
+} as const;
+
+export const CONTRIBUTORS_HERO = {
+  heading: "Our Contributors",
+  topContributorsHeading: "Our Top Contributors",
+  topContributorsSubheading:
+    "Meet our top contributors — the people who help turn ideas into impact.",
+} as const;
+
+export const CONTRIBUTORS_LIST = {
+  heading: "Contributors",
+  loadingMessage: "Loading contributors...",
+  emptyMessage: "No contributors found.",
+  clearFiltersLabel: "Clear filters",
+} as const;

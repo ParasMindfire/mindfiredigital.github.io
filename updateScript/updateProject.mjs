@@ -11,16 +11,14 @@ import {
   npmPackages,
   pypiPackages,
 } from "./config.mjs";
+import logger from "../src/app/utils/logger.mjs";
 
-// Function to get repository data including topics
 async function getRepoData(owner, repo) {
   if (!owner || !repo) return null;
   try {
     const [repoResponse, topicsResponse] = await Promise.all([
       fetch(`${gitBaseUrl}/${owner}/${repo}`, {
-        headers: {
-          Authorization: `Bearer ${githubToken}`,
-        },
+        headers: { Authorization: `Bearer ${githubToken}` },
       }),
       fetch(`${gitBaseUrl}/${owner}/${repo}/topics`, {
         headers: {
@@ -31,19 +29,15 @@ async function getRepoData(owner, repo) {
     ]);
 
     if (!repoResponse.ok || !topicsResponse.ok) {
-      console.error(`Failed to fetch data for ${owner}/${repo}`);
+      logger.error(`Failed to fetch data for ${owner}/${repo}`);
       return null;
     }
 
     const repoData = await repoResponse.json();
     const topicsData = await topicsResponse.json();
-
-    return {
-      ...repoData,
-      topics: topicsData.names || [],
-    };
+    return { ...repoData, topics: topicsData.names || [] };
   } catch (error) {
-    console.error(`Error fetching repo data for ${owner}/${repo}:`, error);
+    logger.error(`Error fetching repo data for ${owner}/${repo}: ${error}`);
     return null;
   }
 }
@@ -56,7 +50,6 @@ async function fetchAllGithubRepos(username, token) {
   while (true) {
     const url = `https://api.github.com/users/${username}/repos?per_page=${perPage}&page=${page}`;
     let data;
-
     try {
       data = await fetchData(url, {
         headers: {
@@ -65,76 +58,41 @@ async function fetchAllGithubRepos(username, token) {
         },
       });
     } catch (error) {
-      console.error(
-        `Error fetching repositories for ${username}:`,
-        error.message
+      logger.error(
+        `Error fetching repositories for ${username}: ${error.message}`
       );
       break;
     }
-
     if (!Array.isArray(data) || data.length === 0) break;
-
     allRepos = allRepos.concat(data);
     page++;
   }
-
   return allRepos;
 }
 
-// Main function to update projects data
 async function updateProjects() {
   try {
     process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0;
-    // Fetch data for current projects and upcoming projects
+
     const [currentProjectsData, upcomingProjectsData, repositories] =
       await Promise.all([
-        // Fetch current projects data
         fetchData("https://directus.ourgoalplan.co.in/graphql", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            query: `query getCurrentProjects {
-            foss_projects(filter: { _and: [
-              { project_type: { _eq: "current" }},
-              { status: { _eq: "published" }}
-            ]}) {
-              id,
-              title,
-              short_description,
-              github_repository_link,
-              documentation_link,
-              project_type,
-              date_created,
-              date_updated,
-              status,
-            }
-          }`,
+            query: `query getCurrentProjects { foss_projects(filter: { _and: [{ project_type: { _eq: "current" }},{ status: { _eq: "published" }}]}) { id, title, short_description, github_repository_link, documentation_link, project_type, date_created, date_updated, status } }`,
           }),
         }),
-        // Fetch upcoming projects data
         fetchData("https://directus.ourgoalplan.co.in/graphql", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
-            query: `query getUpcomingProjects {
-            foss_projects(filter: {project_type: { _eq: "upcoming" }}) {
-              id,
-              title,
-              short_description,
-              github_repository_link,
-              documentation_link,
-              project_type,
-              date_created,
-              date_updated,
-              status,
-            }
-          }`,
+            query: `query getUpcomingProjects { foss_projects(filter: {project_type: { _eq: "upcoming" }}) { id, title, short_description, github_repository_link, documentation_link, project_type, date_created, date_updated, status } }`,
           }),
         }),
         await fetchAllGithubRepos(gitOwner, githubToken),
       ]);
 
-    // Process and write data for current projects
     const currentProjects = await Promise.all(
       currentProjectsData.data.foss_projects.map(async (entry) => {
         const repoUrl = entry.github_repository_link;
@@ -142,9 +100,7 @@ async function updateProjects() {
           repoUrl && repoUrl !== "NA"
             ? repoUrl.replace("https://github.com/", "").split("/")
             : [null, null];
-
         const repoData = await getRepoData(owner, repo);
-
         return {
           ...entry,
           id: parseInt(entry.id),
@@ -158,9 +114,8 @@ async function updateProjects() {
       })
     );
     writeJsonToFile(`${pathForJson}/projects.json`, currentProjects);
-    console.log("Current projects updated successfully.");
+    logger.info("Current projects updated successfully.");
 
-    // Process and write data for upcoming projects
     const upcomingProjects = await Promise.all(
       upcomingProjectsData.data.foss_projects.map(async (entry) => {
         const repoUrl = entry.github_repository_link;
@@ -168,9 +123,7 @@ async function updateProjects() {
           repoUrl && repoUrl !== "NA"
             ? repoUrl.replace("https://github.com/", "").split("/")
             : [null, null];
-
         const repoData = await getRepoData(owner, repo);
-
         return {
           ...entry,
           id: parseInt(entry.id),
@@ -184,16 +137,16 @@ async function updateProjects() {
       })
     );
     writeJsonToFile(`${pathForJson}/upcomingProjects.json`, upcomingProjects);
-    console.log("Upcoming projects updated successfully.");
+    logger.info("Upcoming projects updated successfully.");
 
-    // Fetch and process contributors data for repositories
     const repoNames = repositories.map((repo) => repo.name);
     const contributorsObject = {};
+
     for (const repoName of repoNames) {
       try {
         const contributorsWithBot = await getCollaboratorsWithDefault(
-          gitOwner, // owner
-          repoName, // repository name
+          gitOwner,
+          repoName,
           githubToken
         );
         const contributors = contributorsWithBot.filter(
@@ -201,26 +154,20 @@ async function updateProjects() {
             contributor.type !== "Bot" &&
             !contributor.login.startsWith("github-actions")
         );
-
         if (contributors.length > 0) {
-          // Get last active days for each contributor
           const contributorsWithActivity = await Promise.all(
             contributors.map(getContributorData)
           );
           contributorsObject[repoName] = contributorsWithActivity;
         }
       } catch (error) {
-        console.error(`Error processing contributors for ${repoName}:`, error);
+        logger.error(`Error processing contributors for ${repoName}: ${error}`);
       }
     }
-
-    // Write contributors data to file
     writeJsonToFile(`${pathForJson}/contributors.json`, contributorsObject);
-    // Aggregate contributor from contributors
-    const contributionsMap = {};
 
+    const contributionsMap = {};
     for (const repo in contributorsObject) {
-      // eslint-disable-next-line no-prototype-builtins
       if (contributorsObject.hasOwnProperty(repo)) {
         contributorsObject[repo].forEach((contributor) => {
           const {
@@ -232,37 +179,42 @@ async function updateProjects() {
             pullRequestCount,
             issueCount,
           } = contributor;
-          // Update contributions map
+          const existing = contributionsMap[login];
           contributionsMap[login] = {
             id,
-            contributions:
-              (contributionsMap[login]?.contributions || 0) + contributions,
+            contributions: (existing?.contributions || 0) + contributions,
             html_url,
             avatar_url,
             login,
-            lastActiveDays: contributor.lastActiveDays,
+            lastActiveDays:
+              existing?.lastActiveDays !== undefined &&
+              existing?.lastActiveDays !== null &&
+              contributor.lastActiveDays !== null
+                ? Math.min(existing.lastActiveDays, contributor.lastActiveDays)
+                : contributor.lastActiveDays ??
+                  existing?.lastActiveDays ??
+                  null,
             pullRequestCount:
-              (contributionsMap[login]?.pullRequestCount || 0) +
-              pullRequestCount,
-            issueCount: (contributionsMap[login]?.issueCount || 0) + issueCount,
+              (existing?.pullRequestCount || 0) + pullRequestCount,
+            issueCount: (existing?.issueCount || 0) + issueCount,
           };
         });
       }
     }
 
-    // Sort contributions and write data to file
     const sortedContributions = Object.values(contributionsMap).sort(
       (a, b) => b.contributions - a.contributions
     );
     writeJsonToFile(`${pathForJson}/contributors.json`, sortedContributions);
-    console.log("Contributors list updated successfully.");
+    logger.info(
+      `Contributors list updated successfully. Total: ${sortedContributions.length}`
+    );
 
     getAllStats(
       npmPackages.map((p) => p.name),
       pypiPackages.map((p) => p.name)
     )
       .then((statsMap) => {
-        // Add titles to the stats array
         const statsWithTitles = Object.values(statsMap)
           .map((value) => {
             const npmPackage = npmPackages.find((p) => p.name === value.name);
@@ -271,17 +223,18 @@ async function updateProjects() {
             return { ...value, title };
           })
           .sort((a, b) => b.total - a.total);
-
         writeJsonToFile(`${pathForJson}/stats.json`, statsWithTitles);
-
-        console.log("Stats list updated successfully.");
+        logger.info("Stats list updated successfully.");
       })
       .catch((error) => {
-        console.error("Error fetching stats:", error);
+        logger.error(`Error fetching stats: ${error}`);
       });
   } catch (error) {
-    console.error("An error occurred:", error);
+    logger.error(`An error occurred: ${error}`);
   }
 }
 
-updateProjects();
+updateProjects().catch((e) => {
+  logger.warn(`updateProjects failed, continuing: ${e.message}`);
+  process.exit(0);
+});
